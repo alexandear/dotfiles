@@ -78,17 +78,13 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	stripLeadingSymbols = true
-#[url "git@gitlab.nimses.com:"]
-	#insteadOf = https://gitlab.nimses.com/
 [init]
 	defaultBranch = main
 [pull]
 	rebase = true
-[includeIf "gitdir:~/src/gitlab.nimses.com/"]
-	path = ~/.gitconfig-nimses
+[includeIf "gitdir:~/src/github.com/epam/"]
+	path = ~/.gitconfig-github
 [includeIf "gitdir:~/src/github.com/"]
 	path = ~/.gitconfig-github
-[includeIf "gitdir:~/src/gitlab.com/wwrs/"]
-	path = ~/.gitconfig-wwrs
 [http]
-	cookiefile = /Users/redko.o/.gitcookies
+	cookiefile = ~/.gitcookies
