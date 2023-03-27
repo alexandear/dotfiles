@@ -1,0 +1,94 @@
+[user]
+	name = Oleksandr Redko
+	email = oleksandr.red+github@gmail.com
+[alias]
+	st = status -s
+	ci = commit
+	commend = commit --amend
+	br = branch -v
+	co = checkout
+	df = diff
+	ds = diff --staged
+	lg = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+	ls = ls-files
+	unstage = reset HEAD
+	please = push --force-with-lease
+	ri = rebase --interactive
+	ft = fetch --prune
+	pushmr = push -u origin HEAD -o merge_request.create -o merge_request.target=master -o merge_request.remove_source_branch
+	pushmra = push -u origin HEAD -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds -o merge_request.remove_source_branch
+
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
+	ignored = !git ls-files -v | grep \"^S\"
+	zip = "archive HEAD -o"
+
+	# Delete outdated branches https://dillionmegida.com/p/delete-outdated-branches/
+	del-merged = "!git fetch && git branch --merged | egrep -v 'master|dev|main|staging' | xargs git branch -d"
+
+[color]
+	ui = true
+[color "status"]
+	changed = blue normal
+	untracked = red normal
+	added = magenta normal
+	updated = green normal
+	branch = yellow normal bold
+	header = white normal bold
+[difftool]
+	prompt = false
+[push]
+	default = current
+[core]
+	excludesFile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[merge]
+  keepBackup = false
+	tool = p4merge
+[mergetool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$PWD/$BASE\"" "\"$PWD/$REMOTE\"" "\"$PWD/$LOCAL\"" "\"$PWD/$MERGED\""
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+[diff]
+	tool = p4merge
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE\""
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	stripLeadingSymbols = true
+#[url "git@gitlab.nimses.com:"]
+	#insteadOf = https://gitlab.nimses.com/
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[includeIf "gitdir:~/src/gitlab.nimses.com/"]
+	path = ~/.gitconfig-nimses
+[includeIf "gitdir:~/src/github.com/"]
+	path = ~/.gitconfig-github
+[includeIf "gitdir:~/src/gitlab.com/wwrs/"]
+	path = ~/.gitconfig-wwrs
+[http]
+	cookiefile = /Users/redko.o/.gitcookies
