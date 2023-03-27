@@ -55,7 +55,6 @@ set clipboard=unnamed
 
 " :setlocal spell spelllang=en_us
 
-colorscheme one
 set background=dark
 
 syntax on
