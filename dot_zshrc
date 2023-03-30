@@ -140,3 +140,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# Load Git completion
+#
+# Do the following steps before (https://oliverspryn.blog/adding-git-completion-to-zsh-60f3b0e7ffbc):
+# - create the folder structure
+#   mkdir -p ~/.zsh
+#   cd ~/.zsh
+# - download the scripts
+#   curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+#   curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+#
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
