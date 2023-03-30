@@ -108,6 +108,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# https://olegk.dev/go-linters-configuration-the-right-version
+alias lnt="golangci-lint run --config=~/.golangci.yml ./..."
+
 PATH=$PATH:~/go_appengine:~/go/bin:/usr/local/go/bin
 
 POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
