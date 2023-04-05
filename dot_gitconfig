@@ -82,6 +82,8 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[includeIf "gitdir:~/src/slb-swt-visualstudio.com/"]
+	path = ~/.gitconfig-slb
 [includeIf "gitdir:~/src/github.com/epam/"]
 	path = ~/.gitconfig-github
 [includeIf "gitdir:~/src/github.com/"]
