@@ -114,6 +114,23 @@ export GOPRIVATE=dev.azure.com/slb-swt,slb-swt.visualstudio.com
 # https://olegk.dev/go-linters-configuration-the-right-version
 alias lnt="golangci-lint run --config=~/.golangci.yml ./..."
 
+# Kubernetes aliases
+alias k="kubectl"
+alias kl="kubectl logs"
+alias kp="kubectl get po"
+alias kpg="kubectl get po | grep"
+alias kd="kubectl get deployment"
+alias ks="kubectl get svc"
+alias ke="kubectl exec -it"
+alias kda="kubectl get deployment --all-namespaces"
+alias kpa="kubectl get po --all-namespaces"
+alias ksa="kubectl get svc --all-namespaces"
+alias kia="kubectl get ingresses --all-namespaces"
+alias kds="kubectl describe"
+alias kaf="kubectl apply -f"
+alias kdp="kubectl delete pod"
+alias kpaf="kubectl get po --all-namespaces | grep -v Running | grep -v Completed"
+
 POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 
 # Automatically activate virtual env
