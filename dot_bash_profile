@@ -43,7 +43,7 @@ txtrst='\e[0m'    # Text Reset
 
 # Colorized aliases
 # Basic log
-alias log="printf '$bldcyn' && git log --pretty=format:'%D' -1 && git log --pretty=format:'%C(green)%h%Creset ≁ %C(yellow)%>(12,trunc)%cr%C(white) %>(11,trunc)%an%C(green) ⟹  %C(blue) %s' --abbrev-commit --date=relative" 
+alias log="printf '$bldcyn' && git log --pretty=format:'%D' -1 && git log --pretty=format:'%C(green)%h%Creset ≁ %C(yellow)%>(12,trunc)%cr%C(white) %>(11,trunc)%an%C(green) ⟹  %C(blue) %s' --abbrev-commit --date=relative"
 
 # Basic log with graph
 alias logg="printf '$bldcyn' && git log --pretty=format:'%D' -1 && git log --graph --pretty=format:'%C(green)%h%Creset ≁ %C(yellow)%>(12,trunc)%cr%C(white) %>(11,trunc)%an%C(green) ⟹  %C(blue) %s' --abbrev-commit --date=relative"
@@ -61,7 +61,7 @@ alias logm="printf '$bldcyn' && git log --pretty=format:'%D' -1 && git log --for
 alias refs="printf '$bldcyn' && git show-ref --abbrev && printf '$txtrst'"
 
 # Show remote refs and urls
-alias remotes="printf '$txtpur' && git remote -v && printf '$bldcyn\n' && git branch -r --no-color && printf '$txtrst'" 
+alias remotes="printf '$txtpur' && git remote -v && printf '$bldcyn\n' && git branch -r --no-color && printf '$txtrst'"
 
 # Alias for colorized -ls command
 alias ls='ls -Gp'
@@ -152,10 +152,10 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/redko.o/google-cloud-sdk/path.bash.inc' ]; then . '/Users/redko.o/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.bash.inc' ]; then . '$HOME/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/redko.o/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/redko.o/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then . '$HOME/google-cloud-sdk/completion.bash.inc'; fi
 
 #alias k8sdev="gcloud container clusters get-credentials dev-cluster --zone europe-west1-b --project nimses-test "
 #alias k8sprod="gcloud container clusters get-credentials production-cluster --zone us-east1-b --project nimses-production"
@@ -184,7 +184,7 @@ alias kpaf='kubectl get po --all-namespaces|grep -v Running|grep -v Completed'
 
 export KUBE_EDITOR="vim"
 
-# export GOOGLE_APPLICATION_CREDENTIALS='/Users/redko.o/src/gitlab.nimses.com/creds.json'
+# export GOOGLE_APPLICATION_CREDENTIALS='$HOME/src/gitlab.nimses.com/creds.json'
 
 export GO111MODULE=on
 # export PATH="/usr/local/opt/go@1.13/bin:$PATH"
