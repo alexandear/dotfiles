@@ -67,9 +67,11 @@
 	rebase = true
 [includeIf "gitdir:~/src/slb-swt.visualstudio.com/"]
 	path = ~/.gitconfig-slb
+[includeIf "gitdir:~/src/slb-digital.visualstudio.com/"]
+	path = ~/.gitconfig-slb
 [includeIf "gitdir:~/src/github.com/epam/"]
-	path = ~/.gitconfig-github
+	path = ~/.gitconfig-epam
 [includeIf "gitdir:~/src/github.com/"]
-	path = ~/.gitconfig-github
+	path = ~/.gitconfig-epam
 [http]
 	cookiefile = ~/.gitcookies
