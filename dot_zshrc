@@ -131,7 +131,8 @@ alias kaf="kubectl apply -f"
 alias kdp="kubectl delete pod"
 alias kpaf="kubectl get po --all-namespaces | grep -v Running | grep -v Completed"
 
-POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
+# Python
+alias python=/usr/local/bin/python3
 
 # Automatically activate virtual env
 # https://dev.to/moniquelive/auto-activate-and-deactivate-python-venv-using-zsh-4dlm
@@ -148,6 +149,8 @@ python_venv
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 
 # The -K and -A flags are deprecated and have been replaced
 # by the --apple-use-keychain and --apple-load-keychain
