@@ -18,6 +18,7 @@
 	ft = fetch --prune --all
 	pushmr = push -u origin HEAD -o merge_request.create -o merge_request.target=master -o merge_request.remove_source_branch
 	pushmra = push -u origin HEAD -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds -o merge_request.remove_source_branch
+	reshard = reset --hard
 
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
