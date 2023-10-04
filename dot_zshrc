@@ -154,7 +154,7 @@ python_venv
 
 # codespell spell checker https://github.com/codespell-project/codespell
 # Install with "pip install codespell"
-alias codespell="codespell --check-filenames --skip '.git' --ignore-words-list 'equipments'"
+alias codespell="codespell --check-filenames --skip '.git,.venv,htmlcov' --ignore-words-list 'equipments,exat,aks,wallThickness,incase'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
