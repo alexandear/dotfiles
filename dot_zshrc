@@ -151,6 +151,9 @@ python_venv
 # Install with "pip install codespell"
 alias codespell="codespell --check-filenames --skip '.git,.venv,htmlcov' --ignore-words-list 'equipments,exat,aks,wallThickness,incase'"
 
+# cspell spell checker https://github.com/streetsidesoftware/cspell
+alias cspell="cspell --gitignore --words-only --unique '**/*.{go,py,md,txt}' --exclude 'vendor' | sort --ignore-case >> project-words.txt"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
