@@ -194,6 +194,8 @@ if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-clou
 # The next line updates PATH for the Go tools.
 export PATH=$HOME/go/bin:$PATH
 
+# Use 'gnumake' as 'make'.
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
