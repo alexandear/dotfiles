@@ -77,6 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	poetry
 	virtualenv
 )
 
@@ -130,9 +131,6 @@ alias kds="kubectl describe"
 alias kaf="kubectl apply -f"
 alias kdp="kubectl delete pod"
 alias kpaf="kubectl get po --all-namespaces | grep -v Running | grep -v Completed"
-
-# Python
-alias python=/usr/local/bin/python3
 
 # Automatically activate virtual env
 # https://dev.to/moniquelive/auto-activate-and-deactivate-python-venv-using-zsh-4dlm
