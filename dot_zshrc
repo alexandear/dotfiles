@@ -147,10 +147,13 @@ python_venv
 
 # codespell spell checker https://github.com/codespell-project/codespell
 # Install with "pip install codespell"
-alias codespell="codespell --check-filenames --skip '.git,.venv,htmlcov' --ignore-words-list 'equipments,exat,aks,wallThickness,incase'"
+alias codespell-e="codespell --check-filenames --skip '.git,.venv,htmlcov,vendor' --ignore-words-list 'equipments,exat,aks,wallThickness,incase'"
 
 # cspell spell checker https://github.com/streetsidesoftware/cspell
-alias cspell="cspell --gitignore --words-only --unique '**/*.{go,py,md,txt}' --exclude 'vendor' | sort --ignore-case >> project-words.txt"
+alias cspell-pw="cspell --gitignore --words-only --unique --exclude 'vendor' '**/*.{go,py,md,txt}' | sort --ignore-case >> project-words.txt"
+
+# typos spell checker https://github.com/crate-ci/typos
+alias typos="typos --exclude '*vendor'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
