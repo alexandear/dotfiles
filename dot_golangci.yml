@@ -275,6 +275,19 @@ linters-settings:
       - name: var-declaration
       - name: var-naming
       - name: waitgroup-by-value
+  usestdlibvars:
+    http-method: true
+    http-status-code: true
+    time-weekday: true
+    time-month: true
+    time-layout: true
+    crypto-hash: true
+    default-rpc-path: true
+    os-dev-null: true
+    sql-isolation-level: true
+    tls-signature-scheme: true
+    constant-kind: true
+    syslog-priority: true
 
 issues:
   # Maximum issues count per one linter.
