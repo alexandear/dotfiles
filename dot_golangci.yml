@@ -276,6 +276,10 @@ linters-settings:
       - name: var-declaration
       - name: var-naming
       - name: waitgroup-by-value
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment
   usestdlibvars:
     http-method: true
     http-status-code: true
