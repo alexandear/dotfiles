@@ -12,6 +12,7 @@
 	lg = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
 	ls = ls-files
+	sw = switch
 	unstage = reset HEAD
 	please = push --force-with-lease
 	ri = rebase --interactive
@@ -74,6 +75,6 @@
 [includeIf "gitdir:~/src/github.com/epam/"]
 	path = ~/.gitconfig-epam
 [includeIf "gitdir:~/src/github.com/"]
-	path = ~/.gitconfig-epam
+	path = ~/.gitconfig-github
 [http]
 	cookiefile = ~/.gitcookies
