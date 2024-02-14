@@ -77,6 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	docker # https://gist.github.com/ro31337/b2c33ad0b90636e9e3bb76fb4fb76907
 	poetry
 	virtualenv
 )
