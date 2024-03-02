@@ -154,7 +154,7 @@ alias codespell-e="codespell --check-filenames --skip '.git,.venv,htmlcov,vendor
 alias cspell-pw="cspell --gitignore --words-only --unique --exclude 'vendor' '**/*.{go,py,md,txt}' | sort --ignore-case >> cspell-project-words.txt"
 
 # typos spell checker https://github.com/crate-ci/typos
-alias typos="typos --exclude '*vendor'"
+alias typos="typos --exclude '*vendor' --exclude 'go.mod' --exclude 'go.sum'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
