@@ -71,10 +71,10 @@
 	path = ~/.gitconfig-slb
 [includeIf "gitdir:~/src/slb-digital.visualstudio.com/"]
 	path = ~/.gitconfig-slb
-[includeIf "gitdir:~/src/github.com/epam/"]
-	path = ~/.gitconfig-epam
 [includeIf "gitdir:~/src/github.com/"]
 	path = ~/.gitconfig-github
+[includeIf "gitdir:~/src/github.com/epam/**/.git"]
+	path = ~/.gitconfig-epam
 [http]
 	cookiefile = ~/.gitcookies
 [rerere]
