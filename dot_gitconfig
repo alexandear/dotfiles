@@ -73,8 +73,12 @@
 	path = ~/.gitconfig-slb
 [includeIf "gitdir:~/src/github.com/"]
 	path = ~/.gitconfig-github
+[includeIf "gitdir:~/src/github.com/alexandear/**/.git"]
+	path = ~/.gitconfig-alexandear
 [includeIf "gitdir:~/src/github.com/epam/**/.git"]
 	path = ~/.gitconfig-epam
+[includeIf "gitdir:~/src/gitlab.com/"]
+	path = ~/.gitconfig-gitlab
 [http]
 	cookiefile = ~/.gitcookies
 [rerere]
