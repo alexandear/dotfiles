@@ -174,10 +174,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Git completion
 #
-# Do the following steps before (https://oliverspryn.blog/adding-git-completion-to-zsh-60f3b0e7ffbc):
+# Do the following steps before (https://www.oliverspryn.com/blog/adding-git-completion-to-zsh):
 # - create the folder structure
-#   mkdir -p ~/.zsh
-#   cd ~/.zsh
+#   mkdir -p ~/.zsh/completion
+#   cd ~/.zsh/completion
 # - download the scripts
 #   curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 #   curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
