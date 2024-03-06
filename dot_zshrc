@@ -200,3 +200,6 @@ export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# kubernetes package manager https://krew.sigs.k8s.io/docs/user-guide/setup/install/
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
