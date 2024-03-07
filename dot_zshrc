@@ -80,6 +80,7 @@ plugins=(
 	docker # https://gist.github.com/ro31337/b2c33ad0b90636e9e3bb76fb4fb76907
 	poetry
 	virtualenv
+	kube-ps1
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -132,6 +133,10 @@ alias kds="kubectl describe"
 alias kaf="kubectl apply -f"
 alias kdp="kubectl delete pod"
 alias kpaf="kubectl get po --all-namespaces | grep -v Running | grep -v Completed"
+# brew install kubectx
+alias kctx="kubectx"
+# brew install kubens
+alias kns="kubens"
 
 # Automatically activate virtual env
 # https://dev.to/moniquelive/auto-activate-and-deactivate-python-venv-using-zsh-4dlm
@@ -203,3 +208,6 @@ source <(ng completion script)
 
 # kubernetes package manager https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# show kubernetes cluster and namespace in prompt
+PROMPT='$(kube_ps1)'$PROMPT
