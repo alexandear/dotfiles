@@ -203,11 +203,18 @@ export PATH=$HOME/go/bin:$PATH
 # Use 'gnumake' as 'make'.
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # kubernetes package manager https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # show kubernetes cluster and namespace in prompt
 PROMPT='$(kube_ps1)'$PROMPT
+
+# Load pyenv automatically
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# GitHub Copilot aliases
+#   - ghce: explain
+#   - ghcs: suggestion
+eval "$(gh copilot alias -- zsh)"
