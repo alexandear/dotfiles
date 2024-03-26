@@ -89,3 +89,5 @@
 	ui = auto
 [branch]
 	sort = -committerdate
+[maintenance]
+	repo = ~/src/github.com/golangci/golangci-lint
