@@ -28,7 +28,7 @@
 	st = status -s
 	sw = switch
 	# Switch to default branch: `main` or `master`
-	swdef = "!git rev-parse --abbrev-ref origin/HEAD | sed 's@^origin/@@' | xargs git switch"
+	swdef = "!f() { git rev-parse --verify --quiet main > /dev/null && git switch main || git rev-parse --verify --quiet master > /dev/null && git switch master; unset -f f; }; f"
 	unignore = update-index --no-skip-worktree
 	unstage = reset HEAD
 	zip = "archive HEAD -o"
