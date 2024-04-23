@@ -80,6 +80,8 @@
 	path = ~/.gitconfig-alexandear
 [includeIf "gitdir:~/src/github.com/epam/**/.git"]
 	path = ~/.gitconfig-epam
+[includeIf "gitdir:~/src/github.com/procter-gamble/**/.git"]
+	path = ~/.gitconfig-procter-gamble
 [includeIf "gitdir:~/src/gitlab.com/"]
 	path = ~/.gitconfig-gitlab
 [http]
