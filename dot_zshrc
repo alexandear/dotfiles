@@ -218,3 +218,7 @@ eval "$(pyenv init -)"
 #   - ghce: explain
 #   - ghcs: suggestion
 eval "$(gh copilot alias -- zsh)"
+
+# Load GitHub CLI completion. To generate the completion script, run:
+#   gh completion -s zsh > ~/.zsh/completion/gh.zsh && echo 'source ~/.zsh/completion/gh.zsh' >> ~/.zshrc
+source ~/.zsh/completion/gh.zsh
