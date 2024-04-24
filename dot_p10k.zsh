@@ -106,6 +106,7 @@
     # battery               # internal battery
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
+    my_logged_gh_account    # logged in GitHub account from gh CLI
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -1689,6 +1690,17 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
+  }
+
+  # Show the current GitHub account logged by calling 'gh auth status'.
+  function prompt_my_logged_gh_account() {
+    local logged_gh_account=""
+    if ! zstat -A size +size .git 2>/dev/null; then
+      # Don't have .git repository.
+      return
+    fi
+    local logged_gh_account=($(gh auth status | awk '/Logged in to github.com account/ {print $7}' | head -n 1))
+    p10k segment -b 1 -f 3 -i '🐙' -t $logged_gh_account
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
