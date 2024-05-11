@@ -61,7 +61,6 @@ linters:
     - dupword # Find duplicate words.
     - durationcheck # check for two durations multiplied together [fast: false, auto-fix: false]
     - errname # Checks that sentinel errors are prefixed with the `Err` and error types are suffixed with the `Error`. [fast: false, auto-fix: false]
-    - execinquery # All SQL queries MUST BE covered with tests.
     - exportloopref # checks for pointers to enclosing loop variables [fast: false, auto-fix: false]
     - ginkgolinter # Enforces standards of using ginkgo and gomega.
     - gocheckcompilerdirectives # Check that go compiler directives //go: are valid.
@@ -75,7 +74,6 @@ linters:
     - importas # Enforces consistent import aliases [fast: false, auto-fix: false]
     - ineffassign # Detects when assignments to existing variables are not used [fast: true, auto-fix: false]
     - intrange # find places where for loops could make use of an integer range
-    - intrange # intrange is a linter to find places where for loops could make use of an integer range.
     - loggercheck # Checks key value pairs for common logger libraries
     - makezero # Finds slice declarations with non-zero initial length [fast: false, auto-fix: false]
     - mirror # Reports wrong mirror patterns of bytes/strings usage.
@@ -116,6 +114,7 @@ linters:
     - errcheck # Errcheck is a program for checking for unchecked errors in go programs. These unchecked errors can be critical bugs in some cases [fast: false, auto-fix: false]
     - errchkjson # Check the error json.Marshal.
     - errorlint # errorlint is a linter for that can be used to find code that will cause problems with the error wrapping scheme introduced in Go 1.13. [fast: false, auto-fix: false]
+    - execinquery # (deprecated) All SQL queries MUST BE covered with tests.
     - exhaustive # check exhaustiveness of enum switch statements [fast: false, auto-fix: false]
     - exhaustivestruct # (deprecated) Replaced by exhaustruct
     - exhaustruct # Checks if all structure fields are initialized
@@ -130,13 +129,12 @@ linters:
     - gocyclo # Computes and checks the cyclomatic complexity of functions [fast: true, auto-fix: false]
     - godot # Check if comments end in a period [fast: true, auto-fix: true]
     - godox # Tool for detection of FIXME, TODO and other comment keywords [fast: true, auto-fix: false]
-    - goerr113 # Golang linter to check the errors handling expressions [fast: false, auto-fix: false]
     - gofmt # Gofmt checks whether code was gofmt-ed. By default this tool runs with -s option to check for code simplification [fast: true, auto-fix: true]
     - gofumpt # Gofumpt checks whether code was gofumpt-ed. [fast: true, auto-fix: true]
     - goheader # Checks is file header matches to pattern [fast: true, auto-fix: false]
     - goimports # In addition to fixing imports, goimports also formats your code in the same style as gofmt. [fast: true, auto-fix: true]
     - golint # (deprecated) Replaced by revive
-    - gomnd # An analyzer to detect magic numbers. [fast: true, auto-fix: false]
+    - mnd # An analyzer to detect magic numbers. [fast: true, auto-fix: false]
     - gomoddirectives # Manage the use of 'replace', 'retract', and 'excludes' directives in go.mod. [fast: true, auto-fix: false]
     - gomodguard # Allow and block list linter for direct Go module dependencies. This is different from depguard where there are different block types for example version constraints and module recommendations. [fast: true, auto-fix: false]
     - goprintffuncname # Checks that printf-like functions are named with `f` at the end [fast: true, auto-fix: false]
@@ -201,6 +199,7 @@ linters-settings:
       - performance
     disabled-checks:
       - commentedOutCode
+      - importShadow
       - octalLiteral
       - unnamedResult
       - whyNoLint
@@ -307,11 +306,9 @@ linters-settings:
     time-layout: true
     crypto-hash: true
     default-rpc-path: true
-    os-dev-null: true
     sql-isolation-level: true
     tls-signature-scheme: true
     constant-kind: true
-    syslog-priority: true
   testifylint:
     enable-all: true
 
