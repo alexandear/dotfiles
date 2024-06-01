@@ -248,6 +248,7 @@ linters-settings:
       - name: identical-branches
       - name: if-return
       - name: import-shadowing
+        disabled: true
       - name: increment-decrement
       - name: indent-error-flow
       - name: modifies-parameter
