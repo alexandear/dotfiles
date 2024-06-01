@@ -84,6 +84,8 @@
 	path = ~/.gitconfig-procter-gamble
 [includeIf "gitdir:~/src/gitlab.com/"]
 	path = ~/.gitconfig-gitlab
+[includeIf "gitdir:~/src/gitlab.office.clarity-ag.net/"]
+	path = ~/.gitconfig-clarity
 [http]
 	cookiefile = ~/.gitcookies
 [rerere]
