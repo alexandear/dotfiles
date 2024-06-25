@@ -156,7 +156,7 @@ python_venv
 alias codespell-e="codespell --check-filenames --skip '.git,.venv,htmlcov,vendor' --ignore-words-list 'equipments,exat,aks,wallthickness,incase,cips'"
 
 # cspell spell checker https://github.com/streetsidesoftware/cspell
-alias cspell-pw="cspell --gitignore --words-only --unique --exclude 'vendor' '**/*.{go,py,md,mdx,txt}' | sort --ignore-case >> cspell-project-words.txt"
+alias cspell-pw="cspell --gitignore --words-only --unique --config ~/.cspell.json '**/*.{go,py,md,mdx,txt}' | sort --ignore-case >> cspell-project-words.txt"
 
 # typos spell checker https://github.com/crate-ci/typos
 alias typos="typos --exclude '*vendor' --exclude 'go.mod' --exclude 'go.sum'"
