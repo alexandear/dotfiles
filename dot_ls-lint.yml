@@ -1,0 +1,14 @@
+# ls-lint configuration https://ls-lint.org/2.2/configuration/the-basics.html
+
+ls:
+  .dir: lowercase
+  .generated.go: snake_case
+  .go: snake_case
+  .pb.go: snake_case
+  .resolvers.go: snake_case
+
+ignore:
+  - .git
+  - '**/node_modules/**'
+  - '**/testdata/**'
+  - vendor

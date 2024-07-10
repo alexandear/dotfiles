@@ -114,8 +114,11 @@ source $ZSH/oh-my-zsh.sh
 # Access to SLB Go private modules
 export GOPRIVATE=dev.azure.com/slb-swt,dev.azure.com/slb-digital,slb-swt.visualstudio.com,slb-digital.visualstudio.com
 
-# https://olegk.dev/go-linters-configuration-the-right-version
+# Go linter https://olegk.dev/go-linters-configuration-the-right-version
 alias lnt="golangci-lint run --config=~/.golangci.yml ./..."
+
+# File and directory name linter https://ls-lint.org/
+alias lslnt="ls-lint --config ~/.ls-lint.yml"
 
 # Kubernetes aliases
 alias k="kubectl"
