@@ -223,3 +223,6 @@ eval "$(gh copilot alias -- zsh)"
 # Load GitHub CLI completion. To generate the completion script, run:
 #   gh completion -s zsh > ~/.zsh/completion/gh.zsh && echo 'source ~/.zsh/completion/gh.zsh' >> ~/.zshrc
 source ~/.zsh/completion/gh.zsh
+
+# Add libpq into PATH
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
