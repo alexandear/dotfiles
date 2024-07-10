@@ -5,12 +5,7 @@
 	insteadOf = https://slb-swt.visualstudio.com
 [url "https://oredko:x3koggttrrjnvpmo5vjpp2tdzsejoiu7k7loshmrbl7ykbh7wrca@dev.azure.com/slb-swt"]
 	insteadOf = https://dev.azure.com/slb-swt
-[url "https://oredko:ditgbyqfdrbkw53cqqbncciqemt2gzdvoazh5op4m6tnxy3gjwna@slb-digital.visualstudio.com"]
+[url "https://oredko:iwhppic5t3abgae6ot56vulkdnt5o3pf4vic2c265ueddwsok6zq@slb-digital.visualstudio.com"]
 	insteadOf = https://slb-digital.visualstudio.com
-[url "https://oredko:ditgbyqfdrbkw53cqqbncciqemt2gzdvoazh5op4m6tnxy3gjwna@dev.azure.com/slb-digital"]
+[url "https://oredko:iwhppic5t3abgae6ot56vulkdnt5o3pf4vic2c265ueddwsok6zq@dev.azure.com/slb-digital"]
 	insteadOf = https://dev.azure.com/slb-digital
-[maintenance]
-	repo = /Users/Oleksandr_Redko/src/slb-digital.visualstudio.com/Artemis/artemis-bff-service
-	repo = /Users/Oleksandr_Redko/src/slb-digital.visualstudio.com/Artemis/common-go
-	repo = /Users/Oleksandr_Redko/src/slb-digital.visualstudio.com/Artemis/common-py
-	repo = /Users/Oleksandr_Redko/src/slb-digital.visualstudio.com/Artemis/digital-twin-workflow-service
