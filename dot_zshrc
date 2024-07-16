@@ -229,3 +229,10 @@ source ~/.zsh/completion/gh.zsh
 
 # Add libpq into PATH
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# https://linuxcommand.org/lc3_man_pages/cdh.html
+# The variable CDPATH defines the search path for the directory containing
+# DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+# A null directory name is the same as the current directory.  If DIR begins
+# with a slash (/), then CDPATH is not used.
+export CDPATH=".:~/src"
