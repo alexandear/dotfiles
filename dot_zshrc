@@ -236,3 +236,9 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # A null directory name is the same as the current directory.  If DIR begins
 # with a slash (/), then CDPATH is not used.
 export CDPATH=".:~/src"
+
+# Loading `.env` on VS Code embeded terminal
+# https://medium.com/@viniciu_/automatically-loading-the-env-file-in-your-vs-code-embed-terminal-30b2b32447f7
+if [[ "$TERM_PROGRAM" == "vscode" && -f ".env" ]]; then
+  source .env
+fi
