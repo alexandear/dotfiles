@@ -245,3 +245,15 @@ fi
 
 # Add npm Global Bin to PATH
 export PATH="$PATH:$(npm bin -g)"
+
+# gotip loads the Go tip version
+gotip() {
+    PATH="/Users/Oleksandr_Redko/src/go.googlesource.com/go/bin:${PATH}"
+    export PATH
+}
+
+# gostable unloads the Go tip version
+gostable() {
+    PATH=$(echo "$PATH" | sed -e 's|/Users/Oleksandr_Redko/src/go.googlesource.com/go/bin:||')
+    export PATH
+}
