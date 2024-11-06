@@ -242,3 +242,6 @@ export CDPATH=".:~/src"
 if [[ "$TERM_PROGRAM" == "vscode" && -f ".env" ]]; then
   source .env
 fi
+
+# Add npm Global Bin to PATH
+export PATH="$PATH:$(npm bin -g)"
