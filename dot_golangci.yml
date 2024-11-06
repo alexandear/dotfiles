@@ -62,7 +62,6 @@ linters:
     - dupword # Find duplicate words.
     - durationcheck # check for two durations multiplied together [fast: false, auto-fix: false]
     - errname # Checks that sentinel errors are prefixed with the `Err` and error types are suffixed with the `Error`. [fast: false, auto-fix: false]
-    - exportloopref # checks for pointers to enclosing loop variables [fast: false, auto-fix: false]
     - fatcontext # detects nested contexts in loops.
     - ginkgolinter # Enforces standards of using ginkgo and gomega.
     - gocheckcompilerdirectives # Check that go compiler directives //go: are valid.
@@ -118,6 +117,7 @@ linters:
     - execinquery # (deprecated) All SQL queries MUST BE covered with tests.
     - exhaustive # check exhaustiveness of enum switch statements [fast: false, auto-fix: false]
     - exhaustruct # Checks if all structure fields are initialized
+    - exportloopref # checks for pointers to enclosing loop variables [fast: false, auto-fix: false]
     - forbidigo # Forbids identifiers [fast: true, auto-fix: false]
     - forcetypeassert # finds forced type assertions [fast: true, auto-fix: false]
     - funlen # Tool for detection of long functions [fast: true, auto-fix: false]
