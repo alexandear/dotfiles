@@ -244,15 +244,32 @@ linters-settings:
       - name: error-strings
       - name: errorf
       - name: enforce-map-style
+      - name: enforce-repeated-arg-type-style
+      - name: enforce-slice-style
       - name: exported
+      - name: file-header
+        disabled: true
       - name: flag-parameter
+      - name: function-length
+        disabled: true
+      - name: function-result-limit
+        disabled: true
       - name: get-return
       - name: identical-branches
       - name: if-return
+      - name: import-alias-naming
       - name: import-shadowing
+        disabled: true
+      - name: imports-blocklist
         disabled: true
       - name: increment-decrement
       - name: indent-error-flow
+      - name: line-length-limit
+        disabled: true
+      - name: max-control-nesting
+        disabled: true
+      - name: max-public-structs
+        disabled: true
       - name: modifies-parameter
       - name: modifies-value-receiver
       - name: nested-structs
@@ -265,7 +282,6 @@ linters-settings:
       - name: receiver-naming
       - name: redefines-builtin-id
       - name: redundant-import-alias
-      - name: superfluous-else
       - name: string-format
       - name: string-of-int
       - name: struct-tag
@@ -279,6 +295,7 @@ linters-settings:
       - name: unexported-return
       - name: unhandled-error
         disabled: true
+      - name: unnecessary-stmt
       - name: unreachable-code
       - name: unused-parameter
       - name: unused-receiver
@@ -286,8 +303,6 @@ linters-settings:
       - name: use-any
         disabled: true
       - name: useless-break
-      - name: unnecessary-stmt
-      - name: unreachable-code
       - name: var-declaration
       - name: var-naming
       - name: waitgroup-by-value
