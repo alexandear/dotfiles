@@ -156,7 +156,7 @@ python_venv
 
 # codespell spell checker https://github.com/codespell-project/codespell
 # Install with "pip install codespell"
-alias codespell-e="codespell --check-filenames --skip '.git,.venv,htmlcov,vendor,node_modules,package-lock.json' --ignore-words-list 'equipments,exat,aks,wallthickness,incase,cips,te,datas,nd,ot,Marge,HasTable,nam,mEnt,aNull,TRE,dne,decorder,ue'"
+alias codespell-e="codespell --check-filenames --skip '.git,.venv,htmlcov,vendor,node_modules,package-lock.json' --ignore-words-list 'equipments,exat,aks,wallthickness,incase,cips,te,datas,nd,ot,Marge,HasTable,nam,mEnt,aNull,TRE,dne,decorder,ue,flate,fileTest,siz,exten,valu,valus,bloc,blocs,als,cancelation,fo,ans,RegArgs,tolen'"
 
 # cspell spell checker https://github.com/streetsidesoftware/cspell
 alias cspell-pw="cspell --gitignore --words-only --unique --config ~/.cspell.json '**/*.{go,py,md,mdx,txt}' | sort --ignore-case >> cspell-project-words.txt"
