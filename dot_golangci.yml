@@ -342,3 +342,30 @@ issues:
     - linters:
       - usestdlibvars
       text: \"Bool\" can be replaced
+    - path: "_example_test.go"
+      linters:
+        - revive
+      text: "deep-exit:"
+    - path: "_example_test.go"
+      linters:
+        - noctx
+      text: "must not be called"
+    - path: "_test.go"
+      linters:
+        - noctx
+      text: "must not be called"
+    - path: "_test.go"
+      linters:
+        - revive
+      text: "unused-parameter:"
+    - path: "_test.go"
+      linters:
+        - revive
+      text: "confusing-naming:"
+    - path: "_test.go"
+      linters:
+        - revive
+      text: "flag-parameter:"
+    - path: "_test.go"
+      linters:
+        - gosec
