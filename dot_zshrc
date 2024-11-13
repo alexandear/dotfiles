@@ -1,3 +1,7 @@
+# Uncomment to profile zsh startup time.
+# Use zprof to view the profiling data.
+# zmodload zsh/zprof
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -253,3 +257,10 @@ gostable() {
 
 # direnv hook https://direnv.net/docs/hook.html
 eval "$(direnv hook zsh)"
+
+
+# https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/#measuring-plugin-load-time
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
