@@ -254,3 +254,6 @@ gostable() {
     PATH=$(echo "$PATH" | sed -e 's|/Users/Oleksandr_Redko/src/go.googlesource.com/go/bin:||')
     export PATH
 }
+
+# direnv hook https://direnv.net/docs/hook.html
+eval "$(direnv hook zsh)"
