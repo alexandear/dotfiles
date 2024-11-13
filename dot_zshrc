@@ -74,6 +74,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Lazy loading zsh-nvm
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -84,6 +88,7 @@ plugins=(
 	docker # https://gist.github.com/ro31337/b2c33ad0b90636e9e3bb76fb4fb76907
 	poetry
 	virtualenv
+	# zsh-nvm # https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -177,9 +182,9 @@ alias typos="typos --exclude '*vendor' --exclude 'go.mod' --exclude 'go.sum'"
 # the ssh-add(1) manual page.
 export APPLE_SSH_ADD_BEHAVIOR="macos"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
