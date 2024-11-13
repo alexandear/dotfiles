@@ -80,7 +80,6 @@ plugins=(
 	docker # https://gist.github.com/ro31337/b2c33ad0b90636e9e3bb76fb4fb76907
 	poetry
 	virtualenv
-	kube-ps1
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -209,9 +208,6 @@ export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 # kubernetes package manager https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-# show kubernetes cluster and namespace in prompt
-PROMPT='$(kube_ps1)'$PROMPT
 
 # Load pyenv automatically
 export PYENV_ROOT="$HOME/.pyenv"
