@@ -219,6 +219,8 @@ linters-settings:
     patterns:
       - ".*"
   revive:
+    # Set below 0.8 to enable error-strings
+    confidence: 0.6
     rules:
       - name: add-constant
         disabled: true
