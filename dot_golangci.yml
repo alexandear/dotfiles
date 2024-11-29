@@ -194,6 +194,7 @@ linters-settings:
       - commentedOutCode
       - importShadow
       - octalLiteral
+      - paramTypeCombine
       - unnamedResult
       - whyNoLint
   gosec:
