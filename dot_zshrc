@@ -172,6 +172,10 @@ alias cspell-pw="cspell --gitignore --words-only --unique --config ~/.cspell.jso
 # typos spell checker https://github.com/crate-ci/typos
 alias typos="typos --exclude '*vendor' --exclude 'go.mod' --exclude 'go.sum'"
 
+# limactl aliases
+alias start-docker="limactl start docker"
+alias stop-docker="limactl stop docker"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
