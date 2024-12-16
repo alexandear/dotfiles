@@ -125,6 +125,8 @@ export GOPRIVATE=dev.azure.com/slb-swt,dev.azure.com/slb-digital,slb-swt.visuals
 # Go linter https://olegk.dev/go-linters-configuration-the-right-version
 alias lnt="golangci-lint run --config=~/.golangci.yml ./..."
 
+alias lnt-fix="~/golangci-lint-fix.sh"
+
 # File and directory name linter https://ls-lint.org/
 alias lslnt="ls-lint --config ~/.ls-lint.yml"
 
