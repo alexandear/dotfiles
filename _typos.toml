@@ -1,0 +1,11 @@
+#  typos-cli configuration file
+# https://github.com/crate-ci/typos#false-positives
+
+[default]
+extend-ignore-identifiers-re = [
+]
+
+[default.extend-identifiers]
+
+[default.extend-words]
+lits = "lits"

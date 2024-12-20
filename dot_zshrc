@@ -172,7 +172,7 @@ alias codespell-e="codespell --check-filenames --skip '.git,.venv,htmlcov,vendor
 alias cspell-pw="cspell --gitignore --words-only --unique --config ~/.cspell.json '**/*.{go,py,md,mdx,txt}' | sort --ignore-case >> cspell-project-words.txt"
 
 # typos spell checker https://github.com/crate-ci/typos
-alias typos="typos --exclude '*vendor' --exclude 'go.mod' --exclude 'go.sum'"
+alias typos-e="typos --exclude '*vendor' --exclude 'go.mod' --exclude 'go.sum' --config ~/_typos.toml"
 
 # limactl aliases
 alias start-docker="limactl start docker"
