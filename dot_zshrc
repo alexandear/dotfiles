@@ -88,7 +88,11 @@ plugins=(
 	docker # https://gist.github.com/ro31337/b2c33ad0b90636e9e3bb76fb4fb76907
 	poetry
 	virtualenv
-	# zsh-nvm # https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin
+	zsh-bat # https://github.com/fdellwing/zsh-bat#install
+	zsh-nvm # https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin
+	zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+	zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+	you-should-use # https://github.com/MichaelAquilina/zsh-you-should-use#installation
 )
 
 source $ZSH/oh-my-zsh.sh
