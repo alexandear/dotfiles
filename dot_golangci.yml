@@ -42,6 +42,7 @@ linters:
     - dupword # Find duplicate words.
     - durationcheck # check for two durations multiplied together [fast: false, auto-fix: false]
     - errname # Checks that sentinel errors are prefixed with the `Err` and error types are suffixed with the `Error`. [fast: false, auto-fix: false]
+    - exptostd # Detects functions from golang.org/x/exp/ that can be replaced by std functions [fast: false, auto-fix: true]
     - fatcontext # detects nested contexts in loops.
     - ginkgolinter # Enforces standards of using ginkgo and gomega.
     - gocheckcompilerdirectives # Check that go compiler directives //go: are valid.
@@ -61,6 +62,7 @@ linters:
     - misspell # Finds commonly misspelled English words in comments [fast: true, auto-fix: true]
     - musttag # Enforce field tags in (un)marshaled structs.
     - nilerr # Finds the code that returns nil even if it checks that the error is not nil. [fast: false, auto-fix: false]
+    - nilnesserr # This linter reports that it checks for err != nil, but it returns a different nil value error.
     - noctx # noctx finds sending http request without context.Context [fast: false, auto-fix: false]
     - nolintlint # Reports ill-formed or insufficient nolint directives [fast: true, auto-fix: false]
     - nosprintfhostport # Checks for misuse of Sprintf to construct a host with port in a URL
@@ -83,6 +85,7 @@ linters:
     - unparam # Reports unused function parameters [fast: false, auto-fix: false]
     - unused # Checks Go code for unused constants, variables, functions and types [fast: false, auto-fix: false]
     - usestdlibvars # A linter that detect the possibility to use variables/constants from the Go standard library.
+    - usetesting # Detects when some calls can be replaced by methods from the testing package
     - wastedassign # wastedassign finds wasted assignment statements. [fast: false, auto-fix: false]
     - zerologlint # Detects the wrong usage of zerolog that a user forgets to dispatch with Send or Msg.
 
@@ -147,16 +150,14 @@ linters:
 output:
   # colored-line-number|line-number|json|tab|checkstyle|code-climate|junit-xml|github-actions
   # default is "colored-line-number"
-  # format: line-number
+  formats:
+    - format: colored-line-number
 
   # print lines of code with issue, default is true
   print-issued-lines: false
 
   # print linter name in the end of issue text, default is true
   print-linter-name: true
-
-  # make issues output unique by line, default is true
-  # uniq-by-line: true
 
   # add a prefix to the output file references; default is no prefix
   # path-prefix: ""
