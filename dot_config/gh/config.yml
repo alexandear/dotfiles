@@ -9,7 +9,8 @@ pager:
 # Aliases allow you to create nicknames for gh commands
 aliases:
     co: pr checkout
-    c: '!gh repo view "$1" | awk "/^name:/{print \$2}" | xargs -I% gh repo clone "%" ~/src/github.com/%'
+    c: '!gh repo view --json nameWithOwner --jq .nameWithOwner "$1" | xargs -I% gh repo clone "%" ~/src/github.com/%'
+    cop: '!gh repo view --json nameWithOwner --jq .nameWithOwner "$1" | xargs -I% sh -c "gh repo clone "%" ~/src/github.com/% && code -r ~/src/github.com/%"'
     homework: issue list --assignee @me
     sw: auth switch
 version: "1"
