@@ -6,6 +6,8 @@
 	bb = !~/better-git-branch.sh
 	br = branch -v
 	ci = commit
+	cc = codereview change
+	cm = codereview mail
 	co = checkout
 	commend = commit --amend
 	# Remove tracking branches no longer on remote. See https://stackoverflow.com/a/33548037
