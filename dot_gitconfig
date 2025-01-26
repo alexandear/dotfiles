@@ -28,7 +28,7 @@
 	st = status -s
 	sw = switch
 	# Switch to default branch: `dev`, `main` or `master`
-    swdef = "!f() { (git rev-parse --verify --quiet dev > /dev/null && git switch dev) || (git rev-parse --verify --quiet main > /dev/null && git switch main) || (git rev-parse --verify --quiet master > /dev/null && git switch master); unset -f f; }; f"
+	swdef = "!f() { (git rev-parse --verify --quiet dev > /dev/null && git switch dev) || (git rev-parse --verify --quiet main > /dev/null && git switch main) || (git rev-parse --verify --quiet master > /dev/null && git switch master); unset -f f; }; f"
 	unignore = update-index --no-skip-worktree
 	unstage = reset HEAD
 	zip = "archive HEAD -o"
