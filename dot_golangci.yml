@@ -283,6 +283,8 @@ linters-settings:
       - name: string-format
       - name: string-of-int
       - name: struct-tag
+        arguments:
+          - "json,inline"
       - name: superfluous-else
       - name: time-equal
       - name: time-naming
