@@ -258,7 +258,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # with a slash (/), then CDPATH is not used.
 export CDPATH=".:~/src"
 
-# Loading `.env` on VS Code embeded terminal
+# Loading `.env` on VS Code embedded terminal
 # https://medium.com/@viniciu_/automatically-loading-the-env-file-in-your-vs-code-embed-terminal-30b2b32447f7
 if [[ "$TERM_PROGRAM" == "vscode" && -f ".env" ]]; then
   source .env
@@ -266,13 +266,13 @@ fi
 
 # gotip loads the Go tip version
 gotip() {
-    PATH="/Users/Oleksandr_Redko/src/go.googlesource.com/go/bin:${PATH}"
+    PATH="/Users/alexandear/src/go.googlesource.com/go/bin:${PATH}"
     export PATH
 }
 
 # gostable unloads the Go tip version
 gostable() {
-    PATH=$(echo "$PATH" | sed -e 's|/Users/Oleksandr_Redko/src/go.googlesource.com/go/bin:||')
+    PATH=$(echo "$PATH" | sed -e 's|/Users/alexandear/src/go.googlesource.com/go/bin:||')
     export PATH
 }
 
