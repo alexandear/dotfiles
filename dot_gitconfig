@@ -3,7 +3,7 @@
 	email = oleksandr.red+github@gmail.com
 [alias]
 	# https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff
-	bb = !~/better-git-branch.sh
+	bb = !~/.config/git/better-git-branch.sh
 	br = branch -v
 	ci = commit
 	co = checkout
