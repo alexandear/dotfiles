@@ -134,6 +134,9 @@ alias lnt-fix="~/.config/golangci-lint/golangci-lint-fix.sh"
 # File and directory name linter https://ls-lint.org/
 alias lslnt="ls-lint --config ~/.ls-lint.yml"
 
+# By default, it's "ls -lh"
+alias ll="ls -lah"
+
 # Kubernetes aliases
 alias k="kubectl"
 alias kl="kubectl logs"
