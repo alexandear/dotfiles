@@ -132,7 +132,7 @@ alias lnt="golangci-lint run --config=~/.config/golangci-lint/.golangci.yml ./..
 alias lnt-fix="~/.config/golangci-lint/golangci-lint-fix.sh"
 
 # File and directory name linter https://ls-lint.org/
-alias lslnt="ls-lint --config ~/.ls-lint.yml"
+alias lslnt="ls-lint --config ~/.config/ls-lint/.ls-lint.yml"
 
 # By default, it's "ls -lh"
 alias ll="ls -lah"
