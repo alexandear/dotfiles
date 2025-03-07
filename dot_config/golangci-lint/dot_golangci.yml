@@ -202,12 +202,6 @@ linters-settings:
         correction: "if"
       - typo: "cancelation"
         correction: "cancellation"
-  reassign:
-    # Patterns for global variable names that are checked for reassignment.
-    # See https://github.com/curioswitch/go-reassign#usage
-    # Default: ["EOF", "Err.*"]
-    patterns:
-      - ".*"
   perfsprint:
     bool-format: true
     err-error: true
@@ -219,6 +213,12 @@ linters-settings:
     sprintf1: true
     strconcat: true
     string-format: true
+  reassign:
+    # Patterns for global variable names that are checked for reassignment.
+    # See https://github.com/curioswitch/go-reassign#usage
+    # Default: ["EOF", "Err.*"]
+    patterns:
+      - ".*"
   revive:
     # Set below 0.8 to enable error-strings
     confidence: 0.6
@@ -377,6 +377,8 @@ linters-settings:
       # Redundant type in variable declaration.
       # https://staticcheck.dev/docs/checks/#ST1023
       - ST1023
+  testifylint:
+    enable-all: true
   usestdlibvars:
     http-method: true
     http-status-code: true
@@ -396,8 +398,6 @@ linters-settings:
     os-setenv: true
     os-create-temp: true
     os-temp-dir: true
-  testifylint:
-    enable-all: true
 
 issues:
   # Maximum issues count per one linter.
