@@ -106,7 +106,7 @@
     # battery               # internal battery
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
-    my_logged_gh_account    # logged in GitHub account from gh CLI
+    # my_logged_gh_account    # logged in GitHub account from gh CLI
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
