@@ -1,0 +1,7 @@
+{
+	"auths": {},
+	"currentContext": "lima-default",
+	"cliPluginsExtraDirs": [
+		"/opt/homebrew/lib/docker/cli-plugins"
+	]
+}
