@@ -129,13 +129,15 @@ export GOPRIVATE=dev.azure.com/slb-swt,dev.azure.com/slb-digital,slb-swt.visuals
 # brew install go@1.21
 alias go1.21="/opt/homebrew/Cellar/go@1.21/1.21.13_1/bin/go"
 
-# Go linter https://olegk.dev/go-linters-configuration-the-right-version
-alias lnt="golangci-lint run --config=~/.config/golangci-lint/.golangci.yml ./..."
+# brew install --build-from-source ./Formula/g/golangci-lint@1.64.rb
+alias golangci-lint@1.64="/opt/homebrew/Cellar/golangci-lint@1.64/1.64.8/bin/golangci-lint@1.64"
 
+# Go linter https://olegk.dev/go-linters-configuration-the-right-version
+alias lnt="golangci-lint@1.64 run --config=~/.config/golangci-lint/.golangci.yml ./..."
 alias lnt-fix="~/.config/golangci-lint/golangci-lint-fix.sh"
 
 # golangci-lint v2
-alias lnt2="golangci-lint-v2 run --config=~/.config/golangci-lint/.golangci-v2.yml ./..."
+alias lnt2="golangci-lint run --config=~/.config/golangci-lint/.golangci-v2.yml ./..."
 
 # File and directory name linter https://ls-lint.org/
 alias lslnt="ls-lint --config ~/.config/ls-lint/.ls-lint.yml"
