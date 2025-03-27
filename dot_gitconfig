@@ -1,3 +1,5 @@
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
+
 [user]
 	name = Oleksandr Redko
 	email = oleksandr.red+github@gmail.com
@@ -15,7 +17,7 @@
 	df = diff
 	ds = diff --staged
 	ft = fetch --prune --all
-    # Show files ignored by git:
+	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 	ignore = update-index --skip-worktree
 	ignored = !git ls-files -v | grep \"^S\"
@@ -46,12 +48,14 @@
 	header = white normal bold
 [difftool]
 	prompt = false
-[push]
-	default = current
+# brew install diff-so-fancy
+[diff-so-fancy]
+	stripLeadingSymbols = true
 [core]
 	excludesFile = ~/.gitignore
-	# brew install diff-so-fancy
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	fsmonitor = true
+	untrackedCache = true
 [merge]
 	keepBackup = false
 	conflictstyle = zdiff3
@@ -67,12 +71,18 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-[diff-so-fancy]
-	stripLeadingSymbols = true
 [init]
 	defaultBranch = main
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
 [pull]
 	rebase = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [includeIf "gitdir:~/src/slb-swt.visualstudio.com/"]
 	path = ~/.gitconfig-slb
 [includeIf "gitdir:~/src/slb-digital.visualstudio.com/"]
@@ -91,12 +101,23 @@
 	path = ~/.gitconfig-clarity
 [http]
 	cookiefile = ~/.gitcookies
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
 [rerere]
 	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 [column]
 	ui = auto
 [branch]
 	sort = -committerdate
+[tag]
+	sort = version:refname
 [maintenance]
 	repo = ~/src/github.com/golangci/golangci-lint
 [credential "https://github.com"]
