@@ -5,12 +5,14 @@ run:
   issues-exit-code: 1
   tests: true
   allow-parallel-runners: false
+
 output:
   formats:
     text:
       path: stdout
       print-linter-name: true
       print-issued-lines: false
+
 linters:
   default: none
   enable:
@@ -58,13 +60,61 @@ linters:
     - staticcheck
     - testableexamples
     - testifylint
-    - typecheck
     - unconvert
     - unparam
     - usestdlibvars
     - usetesting
     - wastedassign
     - zerologlint
+  disable:
+    - cyclop
+    - decorder
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - errchkjson
+    - errorlint
+    - exhaustive
+    - exhaustruct
+    - forbidigo
+    - forcetypeassert
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocyclo
+    - godot
+    - godox
+    - goheader
+    - gomoddirectives
+    - gomodguard
+    - goprintffuncname
+    - iface
+    - inamedparam
+    - interfacebloat
+    - ireturn
+    - lll
+    - maintidx
+    - mnd
+    - nakedret
+    - nestif
+    - nilnil
+    - nlreturn
+    - paralleltest
+    - prealloc
+    - predeclared
+    - promlinter
+    - tagalign
+    - tagliatelle
+    - testpackage
+    - thelper
+    - tparallel
+    - varnamelen
+    - whitespace
+    - wrapcheck
+    - wsl
   settings:
     gocritic:
       enable-all: true
@@ -253,6 +303,7 @@ linters:
       os-temp-dir: true
       os-create-temp: true
   exclusions:
+    warn-unused: true
     generated: lax
     rules:
       - linters:
@@ -324,5 +375,11 @@ issues:
   max-same-issues: 0
   new-from-merge-base: ""
 formatters:
+  # enable:
+  #   - gci
+  #   - gofmt
+  #   - gofumpt
+  #   - goimports
+  #   - golines
   exclusions:
     generated: lax

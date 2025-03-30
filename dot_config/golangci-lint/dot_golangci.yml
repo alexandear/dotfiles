@@ -88,7 +88,6 @@ linters:
     - stylecheck # Stylecheck is a replacement for golint [fast: false, auto-fix: false]
     - testableexamples # Linter checks if examples are testable (have an expected output).
     - testifylint # Checks usage of github.com/stretchr/testify.
-    - typecheck # Like the front-end of a Go compiler, parses and type-checks Go code [fast: false, auto-fix: false]
     - unconvert # Remove unnecessary type conversions [fast: false, auto-fix: false]
     - unparam # Reports unused function parameters [fast: false, auto-fix: false]
     - unused # Checks Go code for unused constants, variables, functions and types [fast: false, auto-fix: false]
