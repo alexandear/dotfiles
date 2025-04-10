@@ -202,6 +202,7 @@ linters:
           arguments:
             - ^[_a-z][_a-z0-9]*.go$
         - name: flag-parameter
+          disabled: true
         - name: function-length
           disabled: true
         - name: function-result-limit
@@ -360,10 +361,6 @@ linters:
         path: _test.go
         text: 'confusing-naming:'
       - linters:
-          - revive
-        path: _test.go
-        text: 'flag-parameter:'
-      - linters:
           - gosec
         path: _test.go
     paths:
@@ -374,6 +371,7 @@ issues:
   max-issues-per-linter: 0
   max-same-issues: 0
   new-from-merge-base: ""
+  unique-by-line: false
 formatters:
   # enable:
   #   - gci

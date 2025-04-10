@@ -265,6 +265,7 @@ linters-settings:
         arguments:
           - "^[_a-z][_a-z0-9]*.go$"
       - name: flag-parameter
+        disabled: true
       - name: function-length
         disabled: true
       - name: function-result-limit
@@ -465,13 +466,11 @@ issues:
       text: "confusing-naming:"
     - path: "_test.go"
       linters:
-        - revive
-      text: "flag-parameter:"
-    - path: "_test.go"
-      linters:
         - gosec
 
   # Independently of option `exclude` we use default exclude patterns,
   # it can be disabled by this option.
   # Default exclusions: https://golangci-lint.run/usage/false-positives#default-exclusions
   exclude-use-default: false
+
+  uniq-by-line: false
