@@ -81,7 +81,7 @@
 	rebase = true
 [fetch]
 	prune = true
-	pruneTags = true
+	pruneTags = false
 	all = true
 [includeIf "gitdir:~/src/slb-swt.visualstudio.com/"]
 	path = ~/.gitconfig-slb
