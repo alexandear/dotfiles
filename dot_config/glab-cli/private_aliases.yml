@@ -1,0 +1,4 @@
+ci: pipeline ci
+co: mr checkout
+c: '!glab repo view --output json "$1" | jq .path_with_namespace | xargs -I% glab repo clone "%" ~/src/gitlab.com/%'
+cop: '!glab repo view --output json "$1" | jq .path_with_namespace | xargs -I% sh -c "glab repo clone "%" ~/src/gitlab.com/% && code -r ~/src/gitlab.com/%"'
