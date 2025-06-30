@@ -16,6 +16,7 @@ output:
 linters:
   default: none
   enable:
+    - arangolint
     - asasalint
     - asciicheck
     - bidichk
@@ -26,6 +27,7 @@ linters:
     - copyloopvar
     - dupword
     - durationcheck
+    - embeddedstructfieldcheck
     - errname
     - exptostd
     - fatcontext
@@ -46,6 +48,7 @@ linters:
     - nilerr
     - nilnesserr
     - noctx
+    - noinlineerr
     - nolintlint
     - nosprintfhostport
     - perfsprint
@@ -114,7 +117,7 @@ linters:
     - varnamelen
     - whitespace
     - wrapcheck
-    - wsl
+    - wsl_v5
   settings:
     gocritic:
       enable-all: true
@@ -243,6 +246,7 @@ linters:
           arguments:
             - json,inline
         - name: superfluous-else
+        - name: time-date
         - name: time-equal
         - name: time-naming
         - name: unchecked-type-assertion
@@ -252,6 +256,7 @@ linters:
         - name: unexported-return
         - name: unhandled-error
           disabled: true
+        - name: unnecessary-format
         - name: unnecessary-stmt
         - name: unreachable-code
         - name: unused-parameter
@@ -260,6 +265,7 @@ linters:
         - name: use-any
           disabled: true
         - name: use-errors-new
+        - name: use-fmt-print
         - name: useless-break
         - name: var-declaration
         - name: var-naming
@@ -295,6 +301,7 @@ linters:
       sql-isolation-level: true
       tls-signature-scheme: true
       constant-kind: true
+      time-date-month: true
     usetesting:
       context-background: true
       context-todo: true
@@ -379,5 +386,6 @@ formatters:
   #   - gofumpt
   #   - goimports
   #   - golines
+  #   - swaggo
   exclusions:
     generated: lax
