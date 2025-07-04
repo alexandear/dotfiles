@@ -272,22 +272,7 @@ linters:
         - name: waitgroup-by-value
     staticcheck:
       checks:
-        - ST1001
-        - ST1003
-        - ST1005
-        - ST1006
-        - ST1008
-        - ST1011
-        - ST1012
-        - ST1013
-        - ST1015
-        - ST1016
-        - ST1017
-        - ST1018
-        - ST1019
-        - ST1021
-        - ST1022
-        - ST1023
+        - all
     testifylint:
       enable-all: true
     usestdlibvars:

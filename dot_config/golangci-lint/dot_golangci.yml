@@ -327,8 +327,12 @@ linters-settings:
       - name: var-declaration
       - name: var-naming
       - name: waitgroup-by-value
+  staticcheck:
+    checks:
+      - all
   stylecheck:
     checks:
+      - all
       # Dot imports are discouraged.
       # https://staticcheck.dev/docs/checks/#ST1001
       - ST1001
