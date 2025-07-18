@@ -1,0 +1,480 @@
+run:
+  # default concurrency is a available CPU number
+  concurrency: 4
+
+  # timeout for analysis, e.g. 30s, 5m, default is 1m
+  timeout: 10m
+
+  # exit code when at least one issue was found, default is 1
+  issues-exit-code: 1
+
+  # include test files or not, default is true
+  tests: true
+
+  # list of build tags, all linters use it. Default is empty list.
+  # build-tags:
+  #   - mytag
+
+  # by default isn't set. If set we pass it to "go list -mod={option}". From "go help modules":
+  # If invoked with -mod=readonly, the go command is disallowed from the implicit
+  # automatic updating of go.mod described above. Instead, it fails when any changes
+  # to go.mod are needed. This setting is most useful to check that go.mod does
+  # not need updates, such as in a continuous integration and testing system.
+  # If invoked with -mod=vendor, the go command assumes that the vendor
+  # directory holds the correct copies of dependencies and ignores
+  # the dependency descriptions in go.mod.
+  # modules-download-mode: readonly|vendor|mod
+
+  # Allow multiple parallel golangci-lint instances running.
+  # If false (default) - golangci-lint acquires file lock on start.
+  allow-parallel-runners: false
+
+  # The mode used to evaluate relative paths.
+  # It's used by exclusions, Go plugins, and some linters.
+  # The value can be:
+  # - `gomod`: the paths will be relative to the directory of the `go.mod` file.
+  # - `gitroot`: the paths will be relative to the git root (the parent directory of `.git`).
+  # - `cfg`: the paths will be relative to the configuration file.
+  # - `wd` (NOT recommended): the paths will be relative to the place where golangci-lint is run.
+  relative-path-mode: gomod
+
+linters:
+  enable:
+    - asasalint # Check for pass []any as any in variadic func(...any).
+    - asciicheck # Simple linter to check that your code does not contain non-ASCII identifiers [fast: true, auto-fix: false]
+    - bidichk # Checks for dangerous unicode character sequences
+    - bodyclose # checks whether HTTP response body is closed successfully [fast: false, auto-fix: false]
+    - canonicalheader # checks whether net/http.Header uses canonical header
+    - containedctx # detects struct contained context.Context field.
+    - contextcheck # check the function whether use a non-inherited context [fast: false, auto-fix: false]
+    - copyloopvar # detects places where loop variables are copied [fast: false, auto-fix: false]
+    - dupword # Find duplicate words.
+    - durationcheck # check for two durations multiplied together [fast: false, auto-fix: false]
+    - errname # Checks that sentinel errors are prefixed with the `Err` and error types are suffixed with the `Error`. [fast: false, auto-fix: false]
+    - exptostd # Detects functions from golang.org/x/exp/ that can be replaced by std functions [fast: false, auto-fix: true]
+    - fatcontext # detects nested contexts in loops.
+    - ginkgolinter # Enforces standards of using ginkgo and gomega.
+    - gocheckcompilerdirectives # Check that go compiler directives //go: are valid.
+    - gochecksumtype # Run exhaustiveness checks on Go "sum types".
+    - gocritic # Provides many diagnostics that check for bugs, performance and style issues. [fast: false, auto-fix: false]
+    - gosec # Inspects source code for security problems [fast: false, auto-fix: false]
+    - gosimple # Linter for Go source code that specializes in simplifying a code [fast: false, auto-fix: false]
+    - gosmopolitan # Report certain i18n/l10n anti-patterns in your Go codebase
+    - govet # (vet, vetshadow): Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string [fast: false, auto-fix: false]
+    - grouper # Analyze expression groups
+    - importas # Enforces consistent import aliases [fast: false, auto-fix: false]
+    - ineffassign # Detects when assignments to existing variables are not used [fast: true, auto-fix: false]
+    - intrange # find places where for loops could make use of an integer range
+    - loggercheck # Checks key value pairs for common logger libraries
+    - makezero # Finds slice declarations with non-zero initial length [fast: false, auto-fix: false]
+    - mirror # Reports wrong mirror patterns of bytes/strings usage.
+    - misspell # Finds commonly misspelled English words in comments [fast: true, auto-fix: true]
+    - musttag # Enforce field tags in (un)marshaled structs.
+    - nilerr # Finds the code that returns nil even if it checks that the error is not nil. [fast: false, auto-fix: false]
+    - nilnesserr # This linter reports that it checks for err != nil, but it returns a different nil value error.
+    - noctx # noctx finds sending http request without context.Context [fast: false, auto-fix: false]
+    - nolintlint # Reports ill-formed or insufficient nolint directives [fast: true, auto-fix: false]
+    - nosprintfhostport # Checks for misuse of Sprintf to construct a host with port in a URL
+    - perfsprint # Checks that fmt.Sprintf can be replaced with a faster alternative.
+    - protogetter # Reports direct reads from proto message fields when getters should be used.
+    - reassign # Checks that package variables are not reassigned.
+    - recvcheck # Checks for receiver type consistency.
+    - revive # Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint. [fast: false, auto-fix: false]
+    - rowserrcheck # checks whether Err of rows is checked successfully [fast: false, auto-fix: false]
+    - sloglint # Ensure consistent code style when using log/slog.
+    - spancheck # Checks for mistakes with OpenTelemetry/Census spans.
+    - sqlclosecheck # Checks that sql.Rows and sql.Stmt are closed. [fast: false, auto-fix: false]
+    - staticcheck # Staticcheck is a go vet on steroids, applying a ton of static analysis checks [fast: false, auto-fix: false]
+    - stylecheck # Stylecheck is a replacement for golint [fast: false, auto-fix: false]
+    - testableexamples # Linter checks if examples are testable (have an expected output).
+    - testifylint # Checks usage of github.com/stretchr/testify.
+    - unconvert # Remove unnecessary type conversions [fast: false, auto-fix: false]
+    - unparam # Reports unused function parameters [fast: false, auto-fix: false]
+    - unused # Checks Go code for unused constants, variables, functions and types [fast: false, auto-fix: false]
+    - usestdlibvars # A linter that detect the possibility to use variables/constants from the Go standard library.
+    - usetesting # Detects when some calls can be replaced by methods from the testing package
+    - wastedassign # wastedassign finds wasted assignment statements. [fast: false, auto-fix: false]
+    - zerologlint # Detects the wrong usage of zerolog that a user forgets to dispatch with Send or Msg.
+
+  disable:
+    - cyclop # checks function and package cyclomatic complexity [fast: false, auto-fix: false]
+    - decorder # Check declaration order and count of types, constants, variables and functions.
+    - depguard # Go linter that checks if package imports are in a list of acceptable packages [fast: false, auto-fix: false]
+    - dogsled # Checks assignments with too many blank identifiers (e.g. x, _, _, _, := f()) [fast: true, auto-fix: false]
+    - dupl # Tool for code clone detection [fast: true, auto-fix: false]
+    - errcheck # Errcheck is a program for checking for unchecked errors in go programs. These unchecked errors can be critical bugs in some cases [fast: false, auto-fix: false]
+    - errchkjson # Check the error json.Marshal.
+    - errorlint # errorlint is a linter for that can be used to find code that will cause problems with the error wrapping scheme introduced in Go 1.13. [fast: false, auto-fix: false]
+    - exhaustive # check exhaustiveness of enum switch statements [fast: false, auto-fix: false]
+    - exhaustruct # Checks if all structure fields are initialized
+    - forbidigo # Forbids identifiers [fast: true, auto-fix: false]
+    - forcetypeassert # finds forced type assertions [fast: true, auto-fix: false]
+    - funlen # Tool for detection of long functions [fast: true, auto-fix: false]
+    - gci # Gci control golang package import order and make it always deterministic. [fast: true, auto-fix: true]
+    - gochecknoglobals # check that no global variables exist [fast: true, auto-fix: false]
+    - gochecknoinits # Checks that no init functions are present in Go code [fast: true, auto-fix: false]
+    - gocognit # Computes and checks the cognitive complexity of functions [fast: true, auto-fix: false]
+    - goconst # Finds repeated strings that could be replaced by a constant [fast: true, auto-fix: false]
+    - gocyclo # Computes and checks the cyclomatic complexity of functions [fast: true, auto-fix: false]
+    - godot # Check if comments end in a period [fast: true, auto-fix: true]
+    - godox # Tool for detection of FIXME, TODO and other comment keywords [fast: true, auto-fix: false]
+    - gofmt # Gofmt checks whether code was gofmt-ed. By default this tool runs with -s option to check for code simplification [fast: true, auto-fix: true]
+    - gofumpt # Gofumpt checks whether code was gofumpt-ed. [fast: true, auto-fix: true]
+    - goheader # Checks is file header matches to pattern [fast: true, auto-fix: false]
+    - goimports # In addition to fixing imports, goimports also formats your code in the same style as gofmt. [fast: true, auto-fix: true]
+    - iface # Detect the incorrect use of interfaces, helping developers avoid interface pollution
+    - mnd # An analyzer to detect magic numbers. [fast: true, auto-fix: false]
+    - gomoddirectives # Manage the use of 'replace', 'retract', and 'excludes' directives in go.mod. [fast: true, auto-fix: false]
+    - gomodguard # Allow and block list linter for direct Go module dependencies. This is different from depguard where there are different block types for example version constraints and module recommendations. [fast: true, auto-fix: false]
+    - goprintffuncname # Checks that printf-like functions are named with `f` at the end [fast: true, auto-fix: false]
+    - inamedparam # Reports interfaces with unnamed method parameters.
+    - interfacebloat # A linter that checks the number of methods inside an interface.
+    - ireturn # Accept Interfaces, Return Concrete Types
+    - lll # Reports long lines [fast: true, auto-fix: false]
+    - maintidx # maintidx measures the maintainability index of each function.
+    - nakedret # Finds naked returns in functions greater than a specified function length [fast: true, auto-fix: false]
+    - nestif # Reports deeply nested if statements [fast: true, auto-fix: false]
+    - nilnil # Checks that there is no simultaneous return of `nil` error and an invalid value.
+    - nlreturn # nlreturn checks for a new line before return and branch statements to increase code clarity [fast: true, auto-fix: false]
+    - paralleltest # paralleltest detects missing usage of t.Parallel() method in your Go test [fast: true, auto-fix: false]
+    - prealloc # Finds slice declarations that could potentially be preallocated [fast: true, auto-fix: false]
+    - predeclared # find code that shadows one of Go's predeclared identifiers [fast: true, auto-fix: false]
+    - promlinter # Check Prometheus metrics naming via promlint [fast: true, auto-fix: false]
+    - tagalign # Check that struct tags are well aligned.
+    - tagliatelle # Checks the struct tags. [fast: true, auto-fix: false]
+    - tenv # tenv is analyzer that detects using os.Setenv instead of t.Setenv since Go1.17 [fast: false, auto-fix: false]
+    - testpackage # linter that makes you use a separate _test package [fast: true, auto-fix: false]
+    - thelper # thelper detects golang test helpers without t.Helper() call and checks the consistency of test helpers [fast: false, auto-fix: false]
+    - tparallel # tparallel detects inappropriate usage of t.Parallel() method in your Go test codes [fast: false, auto-fix: false]
+    - varnamelen #: checks that the length of a variable's name matches its scope [fast: false, auto-fix: false]
+    - whitespace # Tool for detection of leading and trailing whitespace [fast: true, auto-fix: true]
+    - wrapcheck # Checks that errors returned from external packages are wrapped [fast: false, auto-fix: false]
+    - wsl # Whitespace Linter - Forces you to use empty lines! [fast: true, auto-fix: false]
+
+# See also https://gist.github.com/cristaloleg/dc29ca0ef2fb554de28d94c3c6f6dc88
+
+# output configuration options
+output:
+  # colored-line-number|line-number|json|tab|checkstyle|code-climate|junit-xml|github-actions
+  # default is "colored-line-number"
+  formats:
+    - format: colored-line-number
+
+  # print lines of code with issue, default is true
+  print-issued-lines: false
+
+  # print linter name in the end of issue text, default is true
+  print-linter-name: true
+
+  # add a prefix to the output file references; default is no prefix
+  # path-prefix: ""
+
+  # sorts results by: filepath, line and column
+  sort-results: false
+
+# all available settings of specific linters
+linters-settings:
+  gocritic:
+    enable-all: true
+    disabled-tags:
+      - performance
+    disabled-checks:
+      - commentedOutCode
+      - importShadow
+      - octalLiteral
+      - paramTypeCombine
+      - unnamedResult
+      - whyNoLint
+  gosec:
+    excludes:
+      - G404 # Insecure random number source (rand)
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment
+      - shadow
+  misspell:
+    ignore-words:
+      - importas
+    extra-words:
+      - typo: "iff"
+        correction: "if"
+      - typo: "cancelation"
+        correction: "cancellation"
+  perfsprint:
+    bool-format: true
+    err-error: true
+    error-format: true
+    errorf: true
+    hex-format: true
+    int-conversion: true
+    integer-format: true
+    sprintf1: true
+    strconcat: true
+    string-format: true
+  reassign:
+    # Patterns for global variable names that are checked for reassignment.
+    # See https://github.com/curioswitch/go-reassign#usage
+    # Default: ["EOF", "Err.*"]
+    patterns:
+      - ".*"
+  revive:
+    # Set below 0.8 to enable error-strings
+    confidence: 0.6
+    rules:
+      - name: add-constant
+        disabled: true
+      - name: argument-limit
+      - name: atomic
+      - name: banned-characters
+      - name: bare-return
+      - name: blank-imports
+      - name: bool-literal-in-expr
+      - name: call-to-gc
+      - name: comment-spacings
+      - name: confusing-naming
+      - name: confusing-results
+      - name: constant-logical-expr
+      - name: context-as-argument
+        arguments:
+          # allow functions with signature: func foo(t *testing.T, ctx context.Context)
+          - allowTypesBefore: "*testing.T"
+      - name: context-keys-type
+      - name: datarace
+      - name: deep-exit
+      - name: defer
+      - name: dot-imports
+      - name: duplicated-imports
+      - name: early-return
+      - name: empty-block
+      - name: empty-lines
+      - name: error-naming
+      - name: error-return
+      - name: error-strings
+      - name: errorf
+      - name: enforce-map-style
+      - name: enforce-repeated-arg-type-style
+      - name: enforce-slice-style
+      - name: exported
+        disabled: true
+      - name: file-header
+        disabled: true
+      - name: file-length-limit
+        disabled: true
+      - name: filename-format
+        arguments:
+          - "^[_a-z][_a-z0-9]*.go$"
+      - name: flag-parameter
+        disabled: true
+      - name: function-length
+        disabled: true
+      - name: function-result-limit
+        disabled: true
+      - name: get-return
+      - name: identical-branches
+      - name: if-return
+      - name: import-alias-naming
+      - name: import-shadowing
+        disabled: true
+      - name: imports-blocklist
+        disabled: true
+      - name: increment-decrement
+      - name: indent-error-flow
+      - name: line-length-limit
+        disabled: true
+      - name: max-control-nesting
+        disabled: true
+      - name: max-public-structs
+        disabled: true
+      - name: modifies-parameter
+      - name: modifies-value-receiver
+      - name: nested-structs
+        disabled: true
+      - name: optimize-operands-order
+      - name: package-comments
+        disabled: true
+      - name: range-val-address
+      - name: range-val-in-closure
+      - name: range
+      - name: receiver-naming
+      - name: redefines-builtin-id
+      - name: redundant-build-tag
+      - name: redundant-import-alias
+      - name: string-format
+      - name: string-of-int
+      - name: struct-tag
+        arguments:
+          - "json,inline"
+      - name: superfluous-else
+      - name: time-equal
+      - name: time-naming
+      - name: unchecked-type-assertion
+        disabled: true
+      - name: unconditional-recursion
+      - name: unexported-naming
+      - name: unexported-return
+      - name: unhandled-error
+        disabled: true
+      - name: unnecessary-stmt
+      - name: unreachable-code
+      - name: unused-parameter
+      - name: unused-receiver
+        disabled: true
+      - name: use-any
+        disabled: true
+      - name: use-errors-new
+      - name: useless-break
+      - name: var-declaration
+      - name: var-naming
+      - name: waitgroup-by-value
+  staticcheck:
+    checks:
+      - all
+  stylecheck:
+    checks:
+      - all
+      # Dot imports are discouraged.
+      # https://staticcheck.dev/docs/checks/#ST1001
+      - ST1001
+      # Poorly chosen identifier.
+      # https://staticcheck.dev/docs/checks/#ST1003
+      - ST1003
+      # Incorrectly formatted error string.
+      # https://staticcheck.dev/docs/checks/#ST1005
+      - ST1005
+      # Poorly chosen receiver name.
+      # https://staticcheck.dev/docs/checks/#ST1006
+      - ST1006
+      # A function's error value should be its last return value.
+      # https://staticcheck.dev/docs/checks/#ST1008
+      - ST1008
+      # Poorly chosen name for variable of type 'time.Duration'.
+      # https://staticcheck.dev/docs/checks/#ST1011
+      - ST1011
+      # Poorly chosen name for error variable.
+      # https://staticcheck.dev/docs/checks/#ST1012
+      - ST1012
+      # Should use constants for HTTP error codes, not magic numbers.
+      # https://staticcheck.dev/docs/checks/#ST1013
+      - ST1013
+      # A switch's default case should be the first or last case.
+      # https://staticcheck.dev/docs/checks/#ST1015
+      - ST1015
+      # Use consistent method receiver names.
+      # https://staticcheck.dev/docs/checks/#ST1016
+      - ST1016
+      # Don't use Yoda conditions.
+      # https://staticcheck.dev/docs/checks/#ST1017
+      - ST1017
+      # Avoid zero-width and control characters in string literals.
+      # https://staticcheck.dev/docs/checks/#ST1018
+      - ST1018
+      # Importing the same package multiple times.
+      # https://staticcheck.dev/docs/checks/#ST1019
+      - ST1019
+      # The documentation of an exported type should start with type's name.
+      # https://staticcheck.dev/docs/checks/#ST1021
+      - ST1021
+      # The documentation of an exported variable or constant should start with variable's name.
+      # https://staticcheck.dev/docs/checks/#ST1022
+      - ST1022
+      # Redundant type in variable declaration.
+      # https://staticcheck.dev/docs/checks/#ST1023
+      - ST1023
+  testifylint:
+    enable-all: true
+  usestdlibvars:
+    http-method: true
+    http-status-code: true
+    time-weekday: true
+    time-month: true
+    time-layout: true
+    crypto-hash: true
+    default-rpc-path: true
+    sql-isolation-level: true
+    tls-signature-scheme: true
+    constant-kind: true
+  usetesting:
+    context-background: true
+    context-todo: true
+    os-chdir: true
+    os-mkdir-temp: true
+    os-setenv: true
+    os-create-temp: true
+    os-temp-dir: true
+
+issues:
+  # Maximum issues count per one linter.
+  max-issues-per-linter: 0
+
+  # Maximum count of issues with the same text.
+  max-same-issues: 0
+
+  # Show only new issues created after the best common ancestor (merge-base against HEAD).
+  new-from-merge-base: ""
+
+  # Excluding configuration per-path, per-linter, per-text and per-source.
+  exclude-rules:
+    - linters:
+      - usestdlibvars
+      text: \"Int\" can be replaced
+    - linters:
+      - usestdlibvars
+      text: \"String\" can be replaced
+    - linters:
+      - usestdlibvars
+      text: \"Float\" can be replaced
+    - linters:
+      - usestdlibvars
+      text: \"Bool\" can be replaced
+    - linters:
+      - usestdlibvars
+      text: \"Complex\" can be replaced
+    - linters:
+      - usestdlibvars
+      text: \"200\" can be replaced by http.StatusOK
+    - linters:
+      - usestdlibvars
+      text: \"400\" can be replaced by http.StatusBadRequest
+    - linters:
+      - usestdlibvars
+      text: \"GET\" can be replaced by http.MethodGet
+    - linters:
+      - usestdlibvars
+      text: \"POST\" can be replaced by http.MethodPost
+    - linters:
+      - usestdlibvars
+      text: \"PUT\" can be replaced by http.MethodPut
+    - linters:
+      - usestdlibvars
+      text: \"DELETE\" can be replaced by http.MethodDelete
+    - path: "_example_test.go"
+      linters:
+        - revive
+      text: "deep-exit:"
+    - path: "_example_test.go"
+      linters:
+        - noctx
+      text: "must not be called"
+    - path: "_test.go"
+      linters:
+        - noctx
+      text: "must not be called"
+    - path: "_test.go"
+      linters:
+        - revive
+      text: "unused-parameter:"
+    - path: "_test.go"
+      linters:
+        - revive
+      text: "confusing-naming:"
+    - path: "_test.go"
+      linters:
+        - gosec
+
+  # Independently of option `exclude` we use default exclude patterns,
+  # it can be disabled by this option.
+  # Default exclusions: https://golangci-lint.run/usage/false-positives#default-exclusions
+  exclude-use-default: false
+
+  uniq-by-line: false

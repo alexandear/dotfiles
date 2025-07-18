@@ -42,5 +42,5 @@ AUTOFIX_LINTERS=(
 
 for linter in "${AUTOFIX_LINTERS[@]}"; do
   echo "--- Fixing $linter issues ---"
-  $GOLANGCI_LINT run --enable-only="$linter" --config=~/.golangci.yml --fix
+  $GOLANGCI_LINT run --enable-only="$linter" --config=~/.config/golangci-lint/.golangci-v164.yml --fix
 done

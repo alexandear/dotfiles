@@ -132,12 +132,12 @@ alias go1.21="/opt/homebrew/Cellar/go@1.21/1.21.13_1/bin/go"
 # brew install --build-from-source ./Formula/g/golangci-lint@1.64.rb
 alias golangci-lint@1.64="/opt/homebrew/Cellar/golangci-lint@1.64/1.64.8/bin/golangci-lint@1.64"
 
-# Go linter https://olegk.dev/go-linters-configuration-the-right-version
-alias lnt="golangci-lint@1.64 run --config=~/.config/golangci-lint/.golangci.yml ./..."
-alias lnt-fix="~/.config/golangci-lint/golangci-lint-fix.sh"
+# golangci-lint v1.64
+alias lnt164="golangci-lint@1.64 run --config=~/.config/golangci-lint/.golangci-v164.yml"
+alias lnt164-fix="~/.config/golangci-lint/golangci-lint-v164-fix.sh"
 
 # golangci-lint v2
-alias lnt2="golangci-lint run --config=~/.config/golangci-lint/.golangci-v2.yml ./..."
+alias lnt="golangci-lint run --config=~/.config/golangci-lint/.golangci.yml"
 
 # revive
 alias rev="revive -config ~/.config/revive/revive.toml -formatter plain ./..."
