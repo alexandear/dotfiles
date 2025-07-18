@@ -37,6 +37,7 @@ linters:
     - gocritic
     - gosec
     - gosmopolitan
+    - govet
     - grouper
     - importas
     - intrange
