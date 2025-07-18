@@ -139,6 +139,9 @@ alias lnt-fix="~/.config/golangci-lint/golangci-lint-fix.sh"
 # golangci-lint v2
 alias lnt2="golangci-lint run --config=~/.config/golangci-lint/.golangci-v2.yml ./..."
 
+# revive
+alias rev="revive -config ~/.config/revive/revive.toml -formatter plain ./..."
+
 # File and directory name linter https://ls-lint.org/
 alias lslnt="ls-lint --config ~/.config/ls-lint/.ls-lint.yml"
 

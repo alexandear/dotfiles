@@ -1,0 +1,72 @@
+# This configuration for the revive linter used for linting the revive's codebase itself.
+# See .github/workflows/lint.yaml.
+
+ignoreGeneratedHeader = false
+severity = "warning"
+confidence = 0.5
+errorCode = 1
+warningCode = 1
+
+[rule.add-constant]
+    disabled = true
+[rule.argument-limit]
+[rule.atomic]
+[rule.banned-characters]
+[rule.bare-return]
+[rule.blank-imports]
+[rule.bool-literal-in-expr]
+[rule.call-to-gc]
+[rule.cognitive-complexity]
+[rule.comments-density]
+[rule.comment-spacings]
+[rule.confusing-naming]
+[rule.confusing-results]
+[rule.constant-logical-expr]
+[rule.context-as-argument]
+[rule.context-keys-type]
+[rule.cyclomatic]
+[rule.datarace]
+[rule.deep-exit]
+[rule-defer]
+[rule.dot-imports]
+[rule.duplicated-imports]
+[rule.early-return]
+[rule.empty-block]
+[rule.empty-lines]
+[rule.enforce-map-style]
+    disabled = true
+    arguments = ["literal"]
+[rule.enforce-slice-style]
+    arguments = ["literal"]
+[rule.error-naming]
+[rule.error-return]
+[rule.error-strings]
+[rule.errorf]
+[rule.exported]
+    disabled = true
+[rule.file-header]
+[rule.file-length-limit]
+[rule.filename-format]
+    # Override the default pattern to forbid .go files with uppercase letters and dashes.
+    arguments=["^[_a-z][_a-z0-9]*\\.go$"]
+[rule.flag-parameter]
+[rule.function-length]
+[rule.increment-decrement]
+[rule.indent-error-flow]
+[rule.line-length-limit]
+    arguments = [200]
+[rule.package-comments]
+    disabled = true
+[rule.package-directory-mismatch]
+[rule.range]
+[rule.receiver-naming]
+[rule.redefines-builtin-id]
+[rule.superfluous-else]
+[rule.time-naming]
+[rule.unexported-naming]
+[rule.unexported-return]
+[rule.unreachable-code]
+[rule.unused-parameter]
+[rule.useless-break]
+[rule.var-declaration]
+[rule.var-naming]
