@@ -196,6 +196,7 @@ linters:
         - name: enforce-map-style
         - name: enforce-repeated-arg-type-style
         - name: enforce-slice-style
+        - name: enforce-switch-style
         - name: exported
           disabled: true
         - name: file-header
