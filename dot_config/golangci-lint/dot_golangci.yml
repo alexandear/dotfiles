@@ -35,12 +35,15 @@ linters:
     - gocheckcompilerdirectives
     - gochecksumtype
     - gocritic
+    - godoclint
     - gosec
     - gosmopolitan
     - govet
     - grouper
     - importas
     - intrange
+    - ineffassign
+    - iotamixing
     - loggercheck
     - makezero
     - mirror
@@ -65,6 +68,7 @@ linters:
     - testifylint
     - unconvert
     - unparam
+    - unqueryvet
     - usestdlibvars
     - usetesting
     - wastedassign
@@ -120,6 +124,8 @@ linters:
     - wrapcheck
     - wsl_v5
   settings:
+    embeddedstructfieldcheck:
+      empty-line: true
     gocritic:
       enable-all: true
       disabled-checks:
@@ -139,6 +145,8 @@ linters:
         - fieldalignment
         - shadow
       enable-all: true
+    ineffassign:
+      check-escaping-errors: true
     misspell:
       extra-words:
         - typo: iff
@@ -214,6 +222,10 @@ linters:
           disabled: true
         - name: get-return
         - name: identical-branches
+        - name: identical-ifelseif-branches
+        - name: identical-ifelseif-conditions
+        - name: identical-switch-branches
+        - name: identical-switch-conditions
         - name: if-return
         - name: import-alias-naming
         - name: import-shadowing
@@ -235,6 +247,7 @@ linters:
         - name: optimize-operands-order
         - name: package-comments
           disabled: true
+        - name: package-directory-mismatch
         - name: range-val-address
         - name: range-val-in-closure
         - name: range
@@ -261,6 +274,7 @@ linters:
         - name: unnecessary-format
         - name: unnecessary-stmt
         - name: unreachable-code
+        - name: unsecure-url-scheme
         - name: unused-parameter
         - name: unused-receiver
           disabled: true
@@ -268,7 +282,9 @@ linters:
           disabled: true
         - name: use-errors-new
         - name: use-fmt-print
+        - name: use-waitgroup-go
         - name: useless-break
+        - name: useless-fallthrough
         - name: var-declaration
         - name: var-naming
         - name: waitgroup-by-value
