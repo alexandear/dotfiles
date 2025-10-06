@@ -85,22 +85,12 @@
 	prune = true
 	pruneTags = false
 	all = true
-[includeIf "gitdir:~/src/slb-swt.visualstudio.com/"]
-	path = ~/.gitconfig-slb
-[includeIf "gitdir:~/src/slb-digital.visualstudio.com/"]
-	path = ~/.gitconfig-slb
 [includeIf "gitdir:~/src/github.com/"]
 	path = ~/.gitconfig-github
 [includeIf "gitdir:~/src/github.com/alexandear/**/.git"]
 	path = ~/.gitconfig-alexandear
-[includeIf "gitdir:~/src/github.com/epam/**/.git"]
-	path = ~/.gitconfig-epam
-[includeIf "gitdir:~/src/github.com/procter-gamble/**/.git"]
-	path = ~/.gitconfig-procter-gamble
 [includeIf "gitdir:~/src/gitlab.com/"]
 	path = ~/.gitconfig-gitlab
-[includeIf "gitdir:~/src/gitlab.office.clarity-ag.net/"]
-	path = ~/.gitconfig-clarity
 [http]
 	cookiefile = ~/.gitcookies
 [help]
