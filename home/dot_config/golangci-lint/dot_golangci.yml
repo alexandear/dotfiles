@@ -46,6 +46,7 @@ linters:
     - iotamixing
     - loggercheck
     - makezero
+    - modernize
     - mirror
     - misspell
     - musttag
@@ -166,6 +167,8 @@ linters:
       strconcat: true
       bool-format: true
       hex-format: true
+      concat-loop: true
+      loop-other-ops: true
     reassign:
       patterns:
         - .*
@@ -383,7 +386,7 @@ issues:
   max-issues-per-linter: 0
   max-same-issues: 0
   new-from-merge-base: ""
-  unique-by-line: false
+  uniq-by-line: false
 formatters:
   # enable:
   #   - gci
