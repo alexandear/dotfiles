@@ -29,6 +29,8 @@
 	pushmra = push -u origin HEAD -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds -o merge_request.remove_source_branch
 	reshard = reset --hard
 	ri = rebase --interactive
+	# Replace HTTPS remotes with SSH ones for all remotes in the repo
+	rssh = "!f(){ for r in $(git remote); do url=$(git remote get-url $r); case $url in https://github.com/*) repo=${url#https://github.com/}; repo=${repo%.git}; new=git@github.com:${repo}.git; git remote set-url $r $new; git remote set-url --push $r $new; ;; git@github.com:*) ;; *) ;; esac; done; }; f"
 	# Show the full hash of the last commit
 	sha = rev-parse HEAD
 	st = status -s
