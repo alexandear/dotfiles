@@ -254,11 +254,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# GitHub Copilot aliases
-#   - ghce: explain
-#   - ghcs: suggestion
-eval "$(gh copilot alias -- zsh)"
-
 # Load GitHub CLI completion. To generate the completion script, run:
 #   gh completion -s zsh > ~/.zsh/completion/gh.zsh && echo 'source ~/.zsh/completion/gh.zsh' >> ~/.zshrc
 source ~/.zsh/completion/gh.zsh
