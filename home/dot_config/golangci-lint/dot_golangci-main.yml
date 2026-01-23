@@ -1,0 +1,26 @@
+version: "2"
+run:
+  relative-path-mode: gomod
+  issues-exit-code: 1
+  tests: true
+
+output:
+  formats:
+    text:
+      path: stdout
+      print-linter-name: true
+      print-issued-lines: false
+
+linters:
+  default: none
+  enable:
+    - revive
+  settings:
+    revive:
+      confidence: 0.1
+      rules:
+        - name: package-directory-mismatch
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

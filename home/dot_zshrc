@@ -138,10 +138,14 @@ alias lnt164-fix="~/.config/golangci-lint/golangci-lint-v164-fix.sh"
 
 # golangci-lint v2
 alias lnt="golangci-lint run --config=~/.config/golangci-lint/.golangci.yml"
+alias lnt-main="~/src/github.com/golangci/golangci-lint/golangci-lint run --config=~/.config/golangci-lint/.golangci-main.yml"
 
 # revive
 alias rev="revive -config ~/.config/revive/revive.toml -formatter plain"
 alias rev-master="~/src/github.com/mgechev/revive/revive -config ~/.config/revive/master.toml -formatter plain"
+
+# https://github.com/godoc-lint/godoc-lint
+alias godoclint="godoclint -config ~/.config/godoclint/.godoc-lint.yaml"
 
 # https://github.com/golang/tools/releases/tag/gopls%2Fv0.20.0
 alias goplsm="go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -fix -test"
