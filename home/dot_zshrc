@@ -160,6 +160,9 @@ alias lslnt="ls-lint --config ~/.config/ls-lint/.ls-lint.yml"
 # By default, it's "ls -lh"
 alias ll="ls -lah"
 
+# lychee link checker https://lychee.cli.rs/
+alias lychee-cfg="lychee --config ~/.config/lychee/lychee.toml"
+
 # Kubernetes aliases
 alias k="kubectl"
 alias kl="kubectl logs"
