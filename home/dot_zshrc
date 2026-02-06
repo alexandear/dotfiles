@@ -184,6 +184,11 @@ alias kctx="kubectx"
 # brew install kubens
 alias kns="kubens"
 
+# https://www.reddit.com/r/commandline/comments/1gn6wf1/comment/lw89rx3/
+copy() {
+  osascript -e "set the clipboard to (POSIX file \"$PWD/$1\")"
+}
+
 # Automatically activate virtual env
 # https://dev.to/moniquelive/auto-activate-and-deactivate-python-venv-using-zsh-4dlm
 python_venv() {
