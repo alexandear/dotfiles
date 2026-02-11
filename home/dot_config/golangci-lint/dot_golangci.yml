@@ -138,6 +138,8 @@ linters:
         - whyNoLint
       disabled-tags:
         - performance
+    godoclint:
+      default: all
     gosec:
       excludes:
         - G404
@@ -174,6 +176,7 @@ linters:
         - .*
     revive:
       confidence: 0.6
+      enable-default-rules: true
       rules:
         - name: add-constant
           disabled: true
@@ -200,6 +203,7 @@ linters:
         - name: early-return
         - name: empty-block
         - name: empty-lines
+        - name: epoch-naming
         - name: error-naming
         - name: error-return
         - name: error-strings
@@ -219,6 +223,7 @@ linters:
             - ^[_a-z][_a-z0-9]*.go$
         - name: flag-parameter
           disabled: true
+        - name: forbidden-call-in-wg-go
         - name: function-length
           disabled: true
         - name: function-result-limit
@@ -237,6 +242,7 @@ linters:
           disabled: true
         - name: increment-decrement
         - name: indent-error-flow
+        - name: inefficient-map-lookup
         - name: line-length-limit
           disabled: true
         - name: max-control-nesting
@@ -275,6 +281,7 @@ linters:
         - name: unhandled-error
           disabled: true
         - name: unnecessary-format
+        - name: unnecessary-if
         - name: unnecessary-stmt
         - name: unreachable-code
         - name: unsecure-url-scheme
@@ -285,6 +292,7 @@ linters:
           disabled: true
         - name: use-errors-new
         - name: use-fmt-print
+        - name: use-slices-sort
         - name: use-waitgroup-go
         - name: useless-break
         - name: useless-fallthrough
@@ -298,6 +306,24 @@ linters:
         - -ST1000
     testifylint:
       enable-all: true
+    unparam:
+      check-exported: true
+    unused:
+      field-writes-are-uses: false
+      post-statements-are-reads: false
+      exported-fields-are-used: false
+      local-variables-are-used: false
+      generated-is-used: false
+    unqueryvet:
+      check-sql-builders: true
+      check-aliased-wildcard: true
+      check-string-concat: true
+      check-format-strings: true
+      check-string-builder: true
+      check-subqueries: true
+      check-n1: true
+      check-sql-injection: true
+      check-tx-leaks: true
     usestdlibvars:
       http-method: true
       http-status-code: true
