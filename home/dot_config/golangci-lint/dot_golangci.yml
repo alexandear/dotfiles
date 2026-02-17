@@ -140,6 +140,8 @@ linters:
         - performance
     godoclint:
       default: all
+      disable:
+        - max-len
     gosec:
       excludes:
         - G404
@@ -281,6 +283,7 @@ linters:
         - name: unhandled-error
           disabled: true
         - name: unnecessary-format
+          disabled: true
         - name: unnecessary-if
         - name: unnecessary-stmt
         - name: unreachable-code
@@ -402,6 +405,7 @@ linters:
         path: _test.go
         text: 'confusing-naming:'
       - linters:
+          - godoclint
           - gosec
         path: _test.go
     paths:
