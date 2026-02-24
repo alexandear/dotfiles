@@ -87,6 +87,8 @@
 	prune = true
 	pruneTags = false
 	all = true
+[includeIf "gitdir:~/src/codeberg.org/"]
+	path = ~/.gitconfig-codeberg
 [includeIf "gitdir:~/src/github.com/"]
 	path = ~/.gitconfig-github
 [includeIf "gitdir:~/src/github.com/alexandear/**/.git"]
