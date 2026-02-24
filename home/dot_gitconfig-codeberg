@@ -1,6 +1,3 @@
 [user]
 	name = Oleksandr Redko
 	email = oleksandr.red+codeberg@gmail.com
-
-[commit]
-	gpgSign = true
