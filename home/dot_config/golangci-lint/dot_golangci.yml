@@ -205,15 +205,15 @@ linters:
         - name: early-return
         - name: empty-block
         - name: empty-lines
+        - name: enforce-map-style
+        - name: enforce-repeated-arg-type-style
+        - name: enforce-slice-style
+        - name: enforce-switch-style
         - name: epoch-naming
         - name: error-naming
         - name: error-return
         - name: error-strings
         - name: errorf
-        - name: enforce-map-style
-        - name: enforce-repeated-arg-type-style
-        - name: enforce-slice-style
-        - name: enforce-switch-style
         - name: exported
           disabled: true
         - name: file-header
@@ -259,9 +259,9 @@ linters:
         - name: package-comments
           disabled: true
         - name: package-directory-mismatch
+        - name: range
         - name: range-val-address
         - name: range-val-in-closure
-        - name: range
         - name: receiver-naming
         - name: redefines-builtin-id
         - name: redundant-build-tag
