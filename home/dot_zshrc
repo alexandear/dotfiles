@@ -287,8 +287,8 @@ if [[ "$TERM_PROGRAM" == "vscode" && -f ".env" ]]; then
   source .env
 fi
 
-# gotip loads the Go tip version
-gotip() {
+# gotiplocal loads the Go tip version
+gotiplocal() {
     PATH="/Users/alexandear/src/go.googlesource.com/go/bin:${PATH}"
     export PATH
 }
