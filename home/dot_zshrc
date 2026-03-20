@@ -149,7 +149,7 @@ alias rev-master="~/src/github.com/mgechev/revive/revive -config ~/.config/reviv
 alias godoclint="godoclint -config ~/.config/godoclint/.godoc-lint.yaml"
 
 # https://github.com/golang/tools/releases/tag/gopls%2Fv0.20.0
-alias goplsm="go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -fix -test"
+alias goplsm="go run golang.org/x/tools/go/analysis/passes/modernize/cmd/modernize@latest -fix -test"
 
 # File and directory name linter https://ls-lint.org/
 alias lslnt="ls-lint --config ~/.config/ls-lint/.ls-lint.yml"
@@ -311,3 +311,7 @@ timezsh() {
 
 # Added by GDK bootstrap
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+# https://github.com/junegunn/fzf#setting-up-shell-integration
+source <(fzf --zsh)
