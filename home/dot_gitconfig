@@ -95,6 +95,8 @@
 	path = ~/.gitconfig-alexandear
 [includeIf "gitdir:~/src/gitlab.com/"]
 	path = ~/.gitconfig-gitlab
+[includeIf "gitdir:~/src/go.googlesource.com/"]
+	path = ~/.gitconfig-googlesource
 [http]
 	cookiefile = ~/.gitcookies
 [help]
