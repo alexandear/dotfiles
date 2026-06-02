@@ -126,6 +126,9 @@ source $ZSH/oh-my-zsh.sh
 # brew install go@1.21
 alias go1.21="/opt/homebrew/Cellar/go@1.21/1.21.13_1/bin/go"
 
+# brew install go@1.25
+alias go1.25="/opt/homebrew/Cellar/go@1.25/1.25.10/bin/go"
+
 # go run golang.org/dl/go1.26rc3@latest download
 # go install golang.org/dl/go1.26rc3@latest
 alias go1.26="go1.26rc3"
