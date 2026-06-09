@@ -60,6 +60,7 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	fsmonitor = true
 	untrackedCache = true
+	editor = vim
 [merge]
 	keepBackup = false
 	conflictstyle = zdiff3
