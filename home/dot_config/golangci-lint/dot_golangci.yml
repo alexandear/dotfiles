@@ -22,6 +22,7 @@ linters:
     - bidichk
     - bodyclose
     - canonicalheader
+    - clickhouselint
     - containedctx
     - contextcheck
     - copyloopvar
@@ -70,6 +71,7 @@ linters:
     - unconvert
     - unparam
     - unqueryvet
+    - unused
     - usestdlibvars
     - usetesting
     - wastedassign
@@ -80,13 +82,15 @@ linters:
     - depguard
     - dogsled
     - dupl
+    - err113
     - errcheck
     - errchkjson
     - errorlint
     - exhaustive
-    - exhaustruct
+    - exhaustruct_v5
     - forbidigo
     - forcetypeassert
+    - funcorder
     - funlen
     - gochecknoglobals
     - gochecknoinits
@@ -97,7 +101,7 @@ linters:
     - godox
     - goheader
     - gomoddirectives
-    - gomodguard
+    - gomodguard_v2
     - goprintffuncname
     - iface
     - inamedparam
@@ -111,6 +115,7 @@ linters:
     - nilnil
     - nlreturn
     - noinlineerr
+    - nonamedreturns
     - paralleltest
     - prealloc
     - predeclared
@@ -125,8 +130,15 @@ linters:
     - wrapcheck
     - wsl_v5
   settings:
+    copyloopvar:
+      check-alias: true
     embeddedstructfieldcheck:
       empty-line: true
+      forbid-mutex: true
+    fatcontext:
+      check-function-literals: true
+      check-loops: true
+      check-struct-pointers: true
     gocritic:
       enable-all: true
       disabled-checks:
@@ -138,6 +150,8 @@ linters:
         - whyNoLint
       disabled-tags:
         - performance
+    gochecksumtype:
+      include-shared-interfaces: true
     godoclint:
       default: all
       disable:
@@ -150,6 +164,8 @@ linters:
         - fieldalignment
         - shadow
       enable-all: true
+    iotamixing:
+      report-individual: true
     ineffassign:
       check-escaping-errors: true
     misspell:
@@ -189,14 +205,21 @@ linters:
         - name: blank-imports
         - name: bool-literal-in-expr
         - name: call-to-gc
+        - name: cognitive-complexity
+          disabled: true
         - name: comment-spacings
+        - name: comments-density
+          disabled: true
         - name: confusing-naming
+          disabled: true
         - name: confusing-results
         - name: constant-logical-expr
         - name: context-as-argument
           arguments:
             - allowTypesBefore: '*testing.T'
         - name: context-keys-type
+        - name: cyclomatic
+          disabled: true
         - name: datarace
         - name: deep-exit
         - name: defer
@@ -247,18 +270,21 @@ linters:
         - name: inefficient-map-lookup
         - name: line-length-limit
           disabled: true
+        - name: marshal-receiver
         - name: max-control-nesting
           disabled: true
         - name: max-public-structs
           disabled: true
         - name: modifies-parameter
         - name: modifies-value-receiver
+        - name: multiline-if-init
         - name: nested-structs
           disabled: true
         - name: optimize-operands-order
         - name: package-comments
           disabled: true
         - name: package-directory-mismatch
+        - name: package-naming
         - name: range
         - name: range-val-address
         - name: range-val-in-closure
@@ -266,6 +292,7 @@ linters:
         - name: redefines-builtin-id
         - name: redundant-build-tag
         - name: redundant-import-alias
+        - name: redundant-test-main-exit
         - name: string-format
         - name: string-of-int
         - name: struct-tag
@@ -295,6 +322,7 @@ linters:
           disabled: true
         - name: use-errors-new
         - name: use-fmt-print
+        - name: use-slices-concat
         - name: use-slices-sort
         - name: use-waitgroup-go
         - name: useless-break
@@ -317,6 +345,7 @@ linters:
       exported-fields-are-used: false
       local-variables-are-used: false
       generated-is-used: false
+      parameters-are-used: false
     unqueryvet:
       check-sql-builders: true
       check-aliased-wildcard: true
@@ -400,10 +429,6 @@ linters:
           - revive
         path: _test.go
         text: 'unused-parameter:'
-      - linters:
-          - revive
-        path: _test.go
-        text: 'confusing-naming:'
       - linters:
           - godoclint
           - gosec
