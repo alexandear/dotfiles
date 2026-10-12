@@ -147,7 +147,7 @@ alias lnt-main="~/src/github.com/golangci/golangci-lint/golangci-lint run --conf
 
 # revive
 alias rev="revive -config ~/.config/revive/revive.toml -formatter plain"
-alias rev-master="~/src/github.com/mgechev/revive/revive -config ~/.config/revive/master.toml -formatter plain"
+alias rev-master="~/src/github.com/revive-lint/revive/revive -config ~/.config/revive/master.toml -formatter plain"
 
 # https://github.com/godoc-lint/godoc-lint
 alias godoclint="godoclint -config ~/.config/godoclint/.godoc-lint.yaml"
