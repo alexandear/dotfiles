@@ -319,3 +319,6 @@ eval "$(/opt/homebrew/bin/mise activate zsh)"
 # Set up fzf key bindings and fuzzy completion
 # https://github.com/junegunn/fzf#setting-up-shell-integration
 source <(fzf --zsh)
+
+# rg config
+export RIPGREP_CONFIG_PATH="$HOME/.config/rg/.ripgreprc"
